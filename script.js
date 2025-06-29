@@ -1,202 +1,3 @@
-// Данные о гоночных событиях с координатами для карты
-const eventsData = [
-    {
-        id: 1,
-        date: "2024-05-05",
-        track: "Circuit de Barcelona-Catalunya",
-        country: "spain",
-        countryName: "Испания",
-        event: "Formula 1 - Гран-при Испании",
-        description: "Главное событие сезона Формулы-1 в Испании. Трек известен своими высокоскоростными поворотами и является одним из самых технически сложных в календаре.",
-        website: "https://www.circuitcat.com/en/",
-        flag: "🇪🇸",
-        trackImage: "🏁",
-        coordinates: [41.5703, 2.2611]
-    },
-    {
-        id: 2,
-        date: "2024-05-12",
-        track: "Circuit Paul Ricard",
-        country: "france",
-        countryName: "Франция",
-        event: "GT World Challenge Europe",
-        description: "Гоночная серия GT с участием лучших GT автомобилей Европы. Трек известен своими уникальными полосами безопасности.",
-        website: "https://www.circuitpaulricard.com/",
-        flag: "🇫🇷",
-        trackImage: "🏁",
-        coordinates: [43.2500, 5.8500]
-    },
-    {
-        id: 3,
-        date: "2024-05-19",
-        track: "Nürburgring Nordschleife",
-        country: "germany",
-        countryName: "Германия",
-        event: "24 часа Нюрбургринга",
-        description: "Легендарная 24-часовая гонка на самой сложной трассе в мире. Северная петля Нюрбургринга - мечта каждого гонщика.",
-        website: "https://www.nuerburgring.de/",
-        flag: "🇩🇪",
-        trackImage: "🏁",
-        coordinates: [50.3400, 6.9500]
-    },
-    {
-        id: 4,
-        date: "2024-05-26",
-        track: "Red Bull Ring",
-        country: "austria",
-        countryName: "Австрия",
-        event: "MotoGP - Гран-при Австрии",
-        description: "Гоночная серия MotoGP на живописном австрийском треке в Альпах. Высокоскоростная трасса с захватывающими видами.",
-        website: "https://www.redbullring.com/",
-        flag: "🇦🇹",
-        trackImage: "🏁",
-        coordinates: [47.2197, 14.7647]
-    },
-    {
-        id: 5,
-        date: "2024-06-02",
-        track: "Automotodrom Brno",
-        country: "czech",
-        countryName: "Чехия",
-        event: "MotoGP - Гран-при Чехии",
-        description: "Исторический трек в Брно, один из самых любимых среди гонщиков MotoGP за свою техническую сложность.",
-        website: "https://www.automotodrombrno.cz/",
-        flag: "🇨🇿",
-        trackImage: "🏁",
-        coordinates: [49.1917, 16.4633]
-    },
-    {
-        id: 6,
-        date: "2024-06-09",
-        track: "Circuit Zandvoort",
-        country: "netherlands",
-        countryName: "Нидерланды",
-        event: "Formula 1 - Гран-при Нидерландов",
-        description: "Возвращение Формулы-1 в Зандворт после долгого перерыва. Трек известен своими бандингами и атмосферой.",
-        website: "https://www.circuit-zandvoort.nl/",
-        flag: "🇳🇱",
-        trackImage: "🏁",
-        coordinates: [52.3889, 4.5408]
-    },
-    {
-        id: 7,
-        date: "2024-06-16",
-        track: "Silverstone Circuit",
-        country: "uk",
-        countryName: "Великобритания",
-        event: "Formula 1 - Гран-при Великобритании",
-        description: "Исторический трек, где состоялась первая гонка Формулы-1 в 1950 году. Дом британского автоспорта.",
-        website: "https://www.silverstone.co.uk/",
-        flag: "🇬🇧",
-        trackImage: "🏁",
-        coordinates: [52.0786, -1.0169]
-    },
-    {
-        id: 8,
-        date: "2024-06-23",
-        track: "Autódromo Internacional do Algarve",
-        country: "portugal",
-        countryName: "Португалия",
-        event: "MotoGP - Гран-при Португалии",
-        description: "Современный трек в Портимао с захватывающими перепадами высот и технически сложными поворотами.",
-        website: "https://www.autodromodoalgarve.com/",
-        flag: "🇵🇹",
-        trackImage: "🏁",
-        coordinates: [37.1311, -8.6417]
-    },
-    {
-        id: 9,
-        date: "2024-06-30",
-        track: "Circuit de la Sarthe",
-        country: "france",
-        countryName: "Франция",
-        event: "24 часа Ле-Мана",
-        description: "Самая престижная гонка на выносливость в мире. Легендарная трасса, где скорость и надежность решают все.",
-        website: "https://www.24h-lemans.com/",
-        flag: "🇫🇷",
-        trackImage: "🏁",
-        coordinates: [47.9375, 0.2244]
-    },
-    {
-        id: 10,
-        date: "2024-07-07",
-        track: "Hockenheimring",
-        country: "germany",
-        countryName: "Германия",
-        event: "DTM - Немецкий чемпионат",
-        description: "Популярная немецкая гоночная серия на историческом треке Хоккенхайм. Высокие скорости и захватывающие гонки.",
-        website: "https://www.hockenheimring.de/",
-        flag: "🇩🇪",
-        trackImage: "🏁",
-        coordinates: [49.3278, 8.5656]
-    },
-    {
-        id: 11,
-        date: "2024-07-14",
-        track: "TT Circuit Assen",
-        country: "netherlands",
-        countryName: "Нидерланды",
-        event: "MotoGP - Голландский TT",
-        description: "Историческая гонка, известная как 'Собор скорости'. Один из самых быстрых треков в календаре MotoGP.",
-        website: "https://www.ttcircuit.com/",
-        flag: "🇳🇱",
-        trackImage: "🏁",
-        coordinates: [52.9617, 6.5233]
-    },
-    {
-        id: 12,
-        date: "2024-07-21",
-        track: "Brands Hatch",
-        country: "uk",
-        countryName: "Великобритания",
-        event: "BTCC - Британский чемпионат",
-        description: "Популярная серия кузовных гонок на технически сложном треке с множеством подъемов и спусков.",
-        website: "https://www.brandshatch.co.uk/",
-        flag: "🇬🇧",
-        trackImage: "🏁",
-        coordinates: [51.3567, 0.2600]
-    },
-    {
-        id: 13,
-        date: "2024-07-28",
-        track: "Circuito de Jerez",
-        country: "spain",
-        countryName: "Испания",
-        event: "MotoGP - Гран-при Испании",
-        description: "Классический трек в Хересе, где часто проводятся тесты и финальные гонки сезона MotoGP.",
-        website: "https://www.circuitodejerez.com/",
-        flag: "🇪🇸",
-        trackImage: "🏁",
-        coordinates: [36.7083, -6.0333]
-    },
-    {
-        id: 14,
-        date: "2024-08-04",
-        track: "Sachsenring",
-        country: "germany",
-        countryName: "Германия",
-        event: "MotoGP - Гран-при Германии",
-        description: "Технически сложный трек с множеством левых поворотов. Любимый трек многих гонщиков MotoGP.",
-        website: "https://www.sachsenring.de/",
-        flag: "🇩🇪",
-        trackImage: "🏁",
-        coordinates: [50.8167, 12.6833]
-    },
-    {
-        id: 15,
-        date: "2024-08-11",
-        track: "Salzburgring",
-        country: "austria",
-        countryName: "Австрия",
-        event: "GT Masters Austria",
-        description: "Высокоскоростной трек в живописных австрийских Альпах. Популярен среди GT серий.",
-        website: "https://www.salzburgring.at/",
-        flag: "🇦🇹",
-        trackImage: "🏁",
-        coordinates: [47.8500, 13.0500]
-    }
-];
-
 // Текущая дата
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
@@ -217,23 +18,51 @@ const modal = document.getElementById('eventModal');
 const eventDetails = document.getElementById('eventDetails');
 const closeModal = document.querySelector('.close');
 
+// Функция для получения языка из localStorage или браузера
+function getStoredLanguage() {
+    // Сначала проверяем localStorage
+    const storedLang = localStorage.getItem('racer-language');
+    if (storedLang) {
+        return storedLang;
+    }
+    
+    // Если нет в localStorage, используем язык браузера
+    const browserLang = navigator.language || navigator.userLanguage;
+    const shortLang = browserLang.split('-')[0];
+    
+    // Проверяем, поддерживается ли язык браузера
+    const supportedLanguages = ['en', 'fr', 'es', 'de', 'it', 'ru'];
+    if (supportedLanguages.includes(shortLang)) {
+        return shortLang;
+    }
+    
+    // По умолчанию английский
+    return 'en';
+}
+
+// Функция для сохранения языка в localStorage
+function saveLanguage(lang) {
+    localStorage.setItem('racer-language', lang);
+}
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
+    const initialLang = getStoredLanguage();
+    setupLanguageFlags(initialLang);
+    translateInterface(initialLang);
     renderCalendar();
     setupEventListeners();
     setupViewToggle();
-    setupLanguageFlags();
     initializeMap();
 });
 
 // Настройка флагов языков
-function setupLanguageFlags() {
+function setupLanguageFlags(initialLang = 'en') {
     const flagButtons = document.querySelectorAll('.flag-btn');
-    const currentLang = getBrowserLanguage();
     
     // Устанавливаем активный флаг
     flagButtons.forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLang) {
+        if (btn.getAttribute('data-lang') === initialLang) {
             btn.classList.add('active');
         }
         
@@ -245,6 +74,9 @@ function setupLanguageFlags() {
             
             // Добавляем активный класс к выбранному флагу
             this.classList.add('active');
+            
+            // Сохраняем выбор в localStorage
+            saveLanguage(selectedLang);
             
             // Переводим интерфейс
             translateInterface(selectedLang);
@@ -258,6 +90,25 @@ function setupLanguageFlags() {
             }
         });
     });
+}
+
+// Создание красного маркера с названием трека
+function createRedMarker(event) {
+    // Создаем кастомную иконку для маркера
+    const redIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `
+            <div class="marker-container">
+                <div class="marker-title">${event.track}</div>
+                <div class="marker-pin">🏁</div>
+            </div>
+        `,
+        iconSize: [120, 40],
+        iconAnchor: [60, 40],
+        popupAnchor: [0, -40]
+    });
+    
+    return redIcon;
 }
 
 // Инициализация карты
@@ -287,7 +138,8 @@ function addTrackMarkers() {
     
     eventsData.forEach(event => {
         if (event.coordinates) {
-            const marker = L.marker(event.coordinates)
+            const customIcon = createRedMarker(event);
+            const marker = L.marker(event.coordinates, { icon: customIcon })
                 .bindPopup(createPopupContent(event))
                 .addTo(map);
             
@@ -309,15 +161,15 @@ function createPopupContent(event) {
     };
     
     const eventDate = new Date(event.date);
-    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.ru[eventDate.getMonth()];
+    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.en[eventDate.getMonth()];
     
     return `
         <div class="popup-content">
             <h3>${event.flag} ${event.track}</h3>
-            <p><strong>${translations[currentLang]?.eventType || 'Event type'}:</strong> ${event.event}</p>
-            <p><strong>${translations[currentLang]?.date || 'Date'}:</strong> ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}</p>
-            <p><strong>${translations[currentLang]?.country || 'Country'}:</strong> ${event.countryName}</p>
-            <a href="${event.website}" target="_blank">${translations[currentLang]?.officialWebsite || 'Official website'}</a>
+            <p><strong>${translations[currentLang]?.eventType || translations.en.eventType}:</strong> ${event.event}</p>
+            <p><strong>${translations[currentLang]?.date || translations.en.date}:</strong> ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}</p>
+            <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${event.countryName}</p>
+            <a href="${event.website}" target="_blank">${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}</a>
         </div>
     `;
 }
@@ -387,7 +239,8 @@ function updateMapMarkers() {
     // Добавляем маркеры для отфильтрованных событий
     filteredEvents.forEach(event => {
         if (event.coordinates) {
-            const marker = L.marker(event.coordinates)
+            const customIcon = createRedMarker(event);
+            const marker = L.marker(event.coordinates, { icon: customIcon })
                 .bindPopup(createPopupContent(event))
                 .addTo(map);
             
@@ -447,7 +300,7 @@ function renderCalendar() {
         it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
     };
     
-    currentMonthElement.textContent = `${monthNames[currentLang] ? monthNames[currentLang][currentMonth] : monthNames.ru[currentMonth]} ${currentYear}`;
+    currentMonthElement.textContent = `${monthNames[currentLang] ? monthNames[currentLang][currentMonth] : monthNames.en[currentMonth]} ${currentYear}`;
     
     calendarDays.innerHTML = '';
     
@@ -532,41 +385,41 @@ function showEventDetails(event) {
     };
     
     const eventDate = new Date(event.date);
-    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.ru[eventDate.getMonth()];
+    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.en[eventDate.getMonth()];
     
     eventDetails.innerHTML = `
         <div class="event-detail">
             <h3>${event.event}</h3>
             <div class="event-info">
                 <div class="event-info-item">
-                    <strong>${translations[currentLang]?.track || 'Track'}:</strong>
+                    <strong>${translations[currentLang]?.track || translations.en.track}:</strong>
                     ${event.track}
                 </div>
                 <div class="event-info-item">
-                    <strong>${translations[currentLang]?.country || 'Country'}:</strong>
+                    <strong>${translations[currentLang]?.country || translations.en.country}:</strong>
                     ${event.flag} ${event.countryName}
                 </div>
                 <div class="event-info-item">
-                    <strong>${translations[currentLang]?.date || 'Date'}:</strong>
+                    <strong>${translations[currentLang]?.date || translations.en.date}:</strong>
                     ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}
                 </div>
                 <div class="event-info-item">
-                    <strong>${translations[currentLang]?.eventType || 'Event type'}:</strong>
+                    <strong>${translations[currentLang]?.eventType || translations.en.eventType}:</strong>
                     ${event.event.split(' - ')[0]}
                 </div>
             </div>
             <div class="event-description">
-                <strong>${translations[currentLang]?.description || 'Description'}:</strong><br>
+                <strong>${translations[currentLang]?.description || translations.en.description}:</strong><br>
                 ${event.description}
             </div>
             <div class="event-links">
                 <a href="${event.website}" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
-                    ${translations[currentLang]?.officialWebsite || 'Official website'}
+                    ${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}
                 </a>
                 <a href="#" onclick="searchEvent('${event.event}')">
                     <i class="fas fa-search"></i>
-                    ${translations[currentLang]?.searchInfo || 'Search information'}
+                    ${translations[currentLang]?.searchInfo || translations.en.searchInfo}
                 </a>
             </div>
         </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Racer - Гоночные события</title>
+    <title data-i18n="title">Racer - Racing Events</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,12 +13,12 @@
     <header>
         <div class="container">
             <h1><i class="fas fa-flag-checkered"></i>Racer</h1>
-            <p data-i18n="subtitle">Гоночные треки и события Европы</p>
+            <p data-i18n="subtitle">European Racing Tracks and Events</p>
             <div class="language-flags">
-                <button class="flag-btn active" data-lang="ru" title="Русский">
+                <button class="flag-btn" data-lang="ru" title="Русский">
                     🇷🇺
                 </button>
-                <button class="flag-btn" data-lang="en" title="English">
+                <button class="flag-btn active" data-lang="en" title="English">
                     🇬🇧
                 </button>
                 <button class="flag-btn" data-lang="fr" title="Français">
@@ -41,38 +41,38 @@
         <div class="controls">
             <div class="view-toggle">
                 <button class="active" data-view="calendar">
-                    <i class="fas fa-calendar-alt"></i> <span data-i18n="calendar">Календарь</span>
+                    <i class="fas fa-calendar-alt"></i> <span data-i18n="calendar">Calendar</span>
                 </button>
                 <button data-view="map">
-                    <i class="fas fa-map-marked-alt"></i> <span data-i18n="map">Карта</span>
+                    <i class="fas fa-map-marked-alt"></i> <span data-i18n="map">Map</span>
                 </button>
             </div>
             <div class="filter-controls">
                 <select id="countryFilter">
-                    <option value="" data-i18n="allCountries">Все страны</option>
-                    <option value="spain" data-i18n="spain">Испания</option>
-                    <option value="france" data-i18n="france">Франция</option>
-                    <option value="germany" data-i18n="germany">Германия</option>
-                    <option value="austria" data-i18n="austria">Австрия</option>
-                    <option value="czech" data-i18n="czech">Чехия</option>
-                    <option value="netherlands" data-i18n="netherlands">Нидерланды</option>
-                    <option value="uk" data-i18n="uk">Великобритания</option>
-                    <option value="portugal" data-i18n="portugal">Португалия</option>
+                    <option value="" data-i18n="allCountries">All Countries</option>
+                    <option value="spain" data-i18n="spain">Spain</option>
+                    <option value="france" data-i18n="france">France</option>
+                    <option value="germany" data-i18n="germany">Germany</option>
+                    <option value="austria" data-i18n="austria">Austria</option>
+                    <option value="czech" data-i18n="czech">Czech Republic</option>
+                    <option value="netherlands" data-i18n="netherlands">Netherlands</option>
+                    <option value="uk" data-i18n="uk">United Kingdom</option>
+                    <option value="portugal" data-i18n="portugal">Portugal</option>
                 </select>
                 <select id="monthFilter">
-                    <option value="" data-i18n="allMonths">Все месяцы</option>
-                    <option value="1" data-i18n="january">Январь</option>
-                    <option value="2" data-i18n="february">Февраль</option>
-                    <option value="3" data-i18n="march">Март</option>
-                    <option value="4" data-i18n="april">Апрель</option>
-                    <option value="5" data-i18n="may">Май</option>
-                    <option value="6" data-i18n="june">Июнь</option>
-                    <option value="7" data-i18n="july">Июль</option>
-                    <option value="8" data-i18n="august">Август</option>
-                    <option value="9" data-i18n="september">Сентябрь</option>
-                    <option value="10" data-i18n="october">Октябрь</option>
-                    <option value="11" data-i18n="november">Ноябрь</option>
-                    <option value="12" data-i18n="december">Декабрь</option>
+                    <option value="" data-i18n="allMonths">All Months</option>
+                    <option value="1" data-i18n="january">January</option>
+                    <option value="2" data-i18n="february">February</option>
+                    <option value="3" data-i18n="march">March</option>
+                    <option value="4" data-i18n="april">April</option>
+                    <option value="5" data-i18n="may">May</option>
+                    <option value="6" data-i18n="june">June</option>
+                    <option value="7" data-i18n="july">July</option>
+                    <option value="8" data-i18n="august">August</option>
+                    <option value="9" data-i18n="september">September</option>
+                    <option value="10" data-i18n="october">October</option>
+                    <option value="11" data-i18n="november">November</option>
+                    <option value="12" data-i18n="december">December</option>
                 </select>
             </div>
         </div>
@@ -82,18 +82,18 @@
             <div id="calendarView" class="view active">
                 <div class="calendar-header">
                     <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
-                    <h2 id="currentMonth">Май 2024</h2>
+                    <h2 id="currentMonth">May 2024</h2>
                     <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="calendar">
                     <div class="calendar-weekdays">
-                        <div data-i18n="monday">Пн</div>
-                        <div data-i18n="tuesday">Вт</div>
-                        <div data-i18n="wednesday">Ср</div>
-                        <div data-i18n="thursday">Чт</div>
-                        <div data-i18n="friday">Пт</div>
-                        <div data-i18n="saturday">Сб</div>
-                        <div data-i18n="sunday">Вс</div>
+                        <div data-i18n="monday">Mon</div>
+                        <div data-i18n="tuesday">Tue</div>
+                        <div data-i18n="wednesday">Wed</div>
+                        <div data-i18n="thursday">Thu</div>
+                        <div data-i18n="friday">Fri</div>
+                        <div data-i18n="saturday">Sat</div>
+                        <div data-i18n="sunday">Sun</div>
                     </div>
                     <div id="calendarDays" class="calendar-days"></div>
                 </div>
@@ -116,12 +116,13 @@
 
     <footer>
         <div class="container">
-            <!-- <p data-i18n="copyright">&copy; 2024 Racer - Гоночные события Европы</p> -->
+            <!-- <p data-i18n="copyright">&copy; 2024 Racer - European Racing Events</p> -->
         </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="translations.js"></script>
+    <script src="tracks.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

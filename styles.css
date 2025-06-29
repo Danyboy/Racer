@@ -305,6 +305,51 @@ header p {
     overflow: hidden;
 }
 
+/* Custom Red Markers */
+.custom-marker {
+    background: transparent !important;
+    border: none !important;
+}
+
+.marker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    padding: 4px 8px;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.6);
+    transition: all 0.3s ease;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+.marker-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.8);
+}
+
+.marker-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+}
+
+.marker-pin {
+    font-size: 16px;
+    color: #FFD700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
 /* Leaflet Map Customization */
 .leaflet-container {
     background: #1a1a1a !important;
@@ -555,6 +600,21 @@ footer {
     .map-container {
         height: 400px;
     }
+    
+    .marker-container {
+        min-width: 80px;
+        max-width: 120px;
+        padding: 3px 6px;
+    }
+    
+    .marker-title {
+        font-size: 9px;
+        max-width: 100px;
+    }
+    
+    .marker-pin {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -588,5 +648,20 @@ footer {
     
     .map-container {
         height: 350px;
+    }
+    
+    .marker-container {
+        min-width: 70px;
+        max-width: 100px;
+        padding: 2px 4px;
+    }
+    
+    .marker-title {
+        font-size: 8px;
+        max-width: 80px;
+    }
+    
+    .marker-pin {
+        font-size: 12px;
     }
 } 
