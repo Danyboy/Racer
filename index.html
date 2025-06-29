@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Racer - Гоночные события</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-flag-checkered"></i>Racer</h1>
+            <p data-i18n="subtitle">Гоночные треки и события Европы</p>
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <div class="view-toggle">
+                <button class="active" data-view="calendar">
+                    <i class="fas fa-calendar-alt"></i> <span data-i18n="calendar">Календарь</span>
+                </button>
+                <button data-view="map">
+                    <i class="fas fa-map-marked-alt"></i> <span data-i18n="map">Карта</span>
+                </button>
+            </div>
+            <div class="filter-controls">
+                <select id="countryFilter">
+                    <option value="" data-i18n="allCountries">Все страны</option>
+                    <option value="spain" data-i18n="spain">Испания</option>
+                    <option value="france" data-i18n="france">Франция</option>
+                    <option value="germany" data-i18n="germany">Германия</option>
+                    <option value="austria" data-i18n="austria">Австрия</option>
+                    <option value="czech" data-i18n="czech">Чехия</option>
+                    <option value="netherlands" data-i18n="netherlands">Нидерланды</option>
+                    <option value="uk" data-i18n="uk">Великобритания</option>
+                    <option value="portugal" data-i18n="portugal">Португалия</option>
+                </select>
+                <select id="monthFilter">
+                    <option value="" data-i18n="allMonths">Все месяцы</option>
+                    <option value="1" data-i18n="january">Январь</option>
+                    <option value="2" data-i18n="february">Февраль</option>
+                    <option value="3" data-i18n="march">Март</option>
+                    <option value="4" data-i18n="april">Апрель</option>
+                    <option value="5" data-i18n="may">Май</option>
+                    <option value="6" data-i18n="june">Июнь</option>
+                    <option value="7" data-i18n="july">Июль</option>
+                    <option value="8" data-i18n="august">Август</option>
+                    <option value="9" data-i18n="september">Сентябрь</option>
+                    <option value="10" data-i18n="october">Октябрь</option>
+                    <option value="11" data-i18n="november">Ноябрь</option>
+                    <option value="12" data-i18n="december">Декабрь</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="view-container">
+            <!-- Календарь -->
+            <div id="calendarView" class="view active">
+                <div class="calendar-header">
+                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="currentMonth">Май 2024</h2>
+                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-weekdays">
+                        <div data-i18n="monday">Пн</div>
+                        <div data-i18n="tuesday">Вт</div>
+                        <div data-i18n="wednesday">Ср</div>
+                        <div data-i18n="thursday">Чт</div>
+                        <div data-i18n="friday">Пт</div>
+                        <div data-i18n="saturday">Сб</div>
+                        <div data-i18n="sunday">Вс</div>
+                    </div>
+                    <div id="calendarDays" class="calendar-days"></div>
+                </div>
+            </div>
+
+            <!-- Карта -->
+            <div id="mapView" class="view">
+                <div id="map" class="map-container"></div>
+            </div>
+        </div>
+
+        <!-- Модальное окно для деталей события -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="eventDetails"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="copyright">&copy; 2024 Racer - Гоночные события Европы</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
