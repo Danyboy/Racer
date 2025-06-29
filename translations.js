@@ -296,22 +296,36 @@ function translateInterface(lang) {
 // Инициализация языка при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     const currentLang = getBrowserLanguage();
-    const languageSelect = document.getElementById('languageSelect');
-    
-    // Устанавливаем текущий язык в селектор
-    languageSelect.value = currentLang;
     
     // Переводим интерфейс
     translateInterface(currentLang);
     
-    // Обработчик изменения языка
-    languageSelect.addEventListener('change', function() {
-        const selectedLang = this.value;
-        translateInterface(selectedLang);
-        
-        // Перерисовываем календарь с новым языком
-        if (typeof renderCalendar === 'function') {
-            renderCalendar();
+    // Устанавливаем активную кнопку языка
+    const flagButtons = document.querySelectorAll('.flag-btn');
+    flagButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
         }
+    });
+    
+    // Обработчик изменения языка через кнопки флагов
+    flagButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const selectedLang = this.getAttribute('data-lang');
+            
+            // Убираем активный класс со всех кнопок
+            flagButtons.forEach(b => b.classList.remove('active'));
+            // Добавляем активный класс к нажатой кнопке
+            this.classList.add('active');
+            
+            // Переводим интерфейс
+            translateInterface(selectedLang);
+            
+            // Перерисовываем календарь с новым языком
+            if (typeof renderCalendar === 'function') {
+                renderCalendar();
+            }
+        });
     });
 }); 

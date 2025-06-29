@@ -25,7 +25,8 @@ function addTrackMarkers() {
     if (track.coordinates) {
       console.log(track.id)
       const customIcon = createRedMarker(track);
-      const marker = L.marker([track.coordinates.lat, track.coordinates.lng], { icon: customIcon })
+      // const marker = L.marker([track.coordinates.lat, track.coordinates.lng], { icon: customIcon })
+      const marker = L.marker([track.coordinates.lat, track.coordinates.lng])
         .bindPopup(createPopupContent(track))
         .addTo(map);
 
@@ -55,12 +56,12 @@ function addTrackMarkersOld() {
 // Создание красного маркера с названием трека
 function createRedMarker(event) {
   // Создаем кастомную иконку для маркера
-  //               <div class="marker-title">${event.track}</div>
 
   const redIcon = L.divIcon({
     className: 'custom-marker',
     html: `
           <div class="marker-container">
+              <div class="marker-title">${event.id}</div>
               <div class="marker-pin">🏁</div>
           </div>
       `,
@@ -88,19 +89,23 @@ function createPopupContent(event) {
   const eventDate = new Date(event.date);
   const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.en[eventDate.getMonth()];
 
+//           <p><strong>${translations[currentLang]?.eventType || translations.en.eventType}:</strong> ${event.event}</p>
+//            <p><strong>${translations[currentLang]?.date || translations.en.date}:</strong> ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}</p>
+
+
   return `
       <div class="popup-content">
-          <h3>${event.flag} ${event.track}</h3>
-          <p><strong>${translations[currentLang]?.eventType || translations.en.eventType}:</strong> ${event.event}</p>
-          <p><strong>${translations[currentLang]?.date || translations.en.date}:</strong> ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}</p>
-          <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${event.countryName}</p>
-          <a href="${event.website}" target="_blank">${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}</a>
+          <h3>${event.flag} ${event.id}</h3>
+          <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${event.country}</p>
+          <a href="${event.website}" target="_blank">${translations[currentLang]?.official_website || translations.en.officialWebsite}</a>
       </div>
   `;
 }
 
 // Обновление маркеров на карте при фильтрации
 function updateMapMarkers() {
+  return
+
   const selectedCountry = countryFilter.value;
   const selectedMonth = monthFilter.value;
 
