@@ -1,4 +1,4 @@
-// Данные о гоночных событиях
+// Данные о гоночных событиях с координатами для карты
 const eventsData = [
     {
         id: 1,
@@ -10,7 +10,8 @@ const eventsData = [
         description: "Главное событие сезона Формулы-1 в Испании. Трек известен своими высокоскоростными поворотами и является одним из самых технически сложных в календаре.",
         website: "https://www.circuitcat.com/en/",
         flag: "🇪🇸",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [41.5703, 2.2611]
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ const eventsData = [
         description: "Гоночная серия GT с участием лучших GT автомобилей Европы. Трек известен своими уникальными полосами безопасности.",
         website: "https://www.circuitpaulricard.com/",
         flag: "🇫🇷",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [43.2500, 5.8500]
     },
     {
         id: 3,
@@ -34,7 +36,8 @@ const eventsData = [
         description: "Легендарная 24-часовая гонка на самой сложной трассе в мире. Северная петля Нюрбургринга - мечта каждого гонщика.",
         website: "https://www.nuerburgring.de/",
         flag: "🇩🇪",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [50.3400, 6.9500]
     },
     {
         id: 4,
@@ -46,7 +49,8 @@ const eventsData = [
         description: "Гоночная серия MotoGP на живописном австрийском треке в Альпах. Высокоскоростная трасса с захватывающими видами.",
         website: "https://www.redbullring.com/",
         flag: "🇦🇹",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [47.2197, 14.7647]
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ const eventsData = [
         description: "Исторический трек в Брно, один из самых любимых среди гонщиков MotoGP за свою техническую сложность.",
         website: "https://www.automotodrombrno.cz/",
         flag: "🇨🇿",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [49.1917, 16.4633]
     },
     {
         id: 6,
@@ -70,7 +75,8 @@ const eventsData = [
         description: "Возвращение Формулы-1 в Зандворт после долгого перерыва. Трек известен своими бандингами и атмосферой.",
         website: "https://www.circuit-zandvoort.nl/",
         flag: "🇳🇱",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [52.3889, 4.5408]
     },
     {
         id: 7,
@@ -82,7 +88,8 @@ const eventsData = [
         description: "Исторический трек, где состоялась первая гонка Формулы-1 в 1950 году. Дом британского автоспорта.",
         website: "https://www.silverstone.co.uk/",
         flag: "🇬🇧",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [52.0786, -1.0169]
     },
     {
         id: 8,
@@ -94,7 +101,8 @@ const eventsData = [
         description: "Современный трек в Портимао с захватывающими перепадами высот и технически сложными поворотами.",
         website: "https://www.autodromodoalgarve.com/",
         flag: "🇵🇹",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [37.1311, -8.6417]
     },
     {
         id: 9,
@@ -106,7 +114,8 @@ const eventsData = [
         description: "Самая престижная гонка на выносливость в мире. Легендарная трасса, где скорость и надежность решают все.",
         website: "https://www.24h-lemans.com/",
         flag: "🇫🇷",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [47.9375, 0.2244]
     },
     {
         id: 10,
@@ -118,7 +127,8 @@ const eventsData = [
         description: "Популярная немецкая гоночная серия на историческом треке Хоккенхайм. Высокие скорости и захватывающие гонки.",
         website: "https://www.hockenheimring.de/",
         flag: "🇩🇪",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [49.3278, 8.5656]
     },
     {
         id: 11,
@@ -130,7 +140,8 @@ const eventsData = [
         description: "Историческая гонка, известная как 'Собор скорости'. Один из самых быстрых треков в календаре MotoGP.",
         website: "https://www.ttcircuit.com/",
         flag: "🇳🇱",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [52.9617, 6.5233]
     },
     {
         id: 12,
@@ -142,7 +153,8 @@ const eventsData = [
         description: "Популярная серия кузовных гонок на технически сложном треке с множеством подъемов и спусков.",
         website: "https://www.brandshatch.co.uk/",
         flag: "🇬🇧",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [51.3567, 0.2600]
     },
     {
         id: 13,
@@ -154,7 +166,8 @@ const eventsData = [
         description: "Классический трек в Хересе, где часто проводятся тесты и финальные гонки сезона MotoGP.",
         website: "https://www.circuitodejerez.com/",
         flag: "🇪🇸",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [36.7083, -6.0333]
     },
     {
         id: 14,
@@ -166,7 +179,8 @@ const eventsData = [
         description: "Технически сложный трек с множеством левых поворотов. Любимый трек многих гонщиков MotoGP.",
         website: "https://www.sachsenring.de/",
         flag: "🇩🇪",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [50.8167, 12.6833]
     },
     {
         id: 15,
@@ -178,7 +192,8 @@ const eventsData = [
         description: "Высокоскоростной трек в живописных австрийских Альпах. Популярен среди GT серий.",
         website: "https://www.salzburgring.at/",
         flag: "🇦🇹",
-        trackImage: "🏁"
+        trackImage: "🏁",
+        coordinates: [47.8500, 13.0500]
     }
 ];
 
@@ -186,6 +201,10 @@ const eventsData = [
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
+
+// Переменные для карты
+let map = null;
+let markers = [];
 
 // Элементы DOM
 const calendarDays = document.getElementById('calendarDays');
@@ -203,7 +222,105 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCalendar();
     setupEventListeners();
     setupViewToggle();
+    setupLanguageFlags();
+    initializeMap();
 });
+
+// Настройка флагов языков
+function setupLanguageFlags() {
+    const flagButtons = document.querySelectorAll('.flag-btn');
+    const currentLang = getBrowserLanguage();
+    
+    // Устанавливаем активный флаг
+    flagButtons.forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
+        }
+        
+        btn.addEventListener('click', function() {
+            const selectedLang = this.getAttribute('data-lang');
+            
+            // Убираем активный класс со всех флагов
+            flagButtons.forEach(flag => flag.classList.remove('active'));
+            
+            // Добавляем активный класс к выбранному флагу
+            this.classList.add('active');
+            
+            // Переводим интерфейс
+            translateInterface(selectedLang);
+            
+            // Перерисовываем календарь с новым языком
+            renderCalendar();
+            
+            // Обновляем карту
+            if (map) {
+                updateMapMarkers();
+            }
+        });
+    });
+}
+
+// Инициализация карты
+function initializeMap() {
+    if (map) {
+        map.remove();
+    }
+    
+    map = L.map('map').setView([50.0, 10.0], 5);
+    
+    // Добавляем темную карту
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '©OpenStreetMap, ©CartoDB',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+    
+    // Добавляем маркеры для всех треков
+    addTrackMarkers();
+}
+
+// Добавление маркеров треков на карту
+function addTrackMarkers() {
+    // Очищаем существующие маркеры
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+    
+    eventsData.forEach(event => {
+        if (event.coordinates) {
+            const marker = L.marker(event.coordinates)
+                .bindPopup(createPopupContent(event))
+                .addTo(map);
+            
+            markers.push(marker);
+        }
+    });
+}
+
+// Создание содержимого попапа для маркера
+function createPopupContent(event) {
+    const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
+    const monthNames = {
+        ru: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        fr: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        es: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+        it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+    };
+    
+    const eventDate = new Date(event.date);
+    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.ru[eventDate.getMonth()];
+    
+    return `
+        <div class="popup-content">
+            <h3>${event.flag} ${event.track}</h3>
+            <p><strong>${translations[currentLang]?.eventType || 'Event type'}:</strong> ${event.event}</p>
+            <p><strong>${translations[currentLang]?.date || 'Date'}:</strong> ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}</p>
+            <p><strong>${translations[currentLang]?.country || 'Country'}:</strong> ${event.countryName}</p>
+            <a href="${event.website}" target="_blank">${translations[currentLang]?.officialWebsite || 'Official website'}</a>
+        </div>
+    `;
+}
 
 // Настройка обработчиков событий
 function setupEventListeners() {
@@ -225,8 +342,15 @@ function setupEventListeners() {
         renderCalendar();
     });
 
-    countryFilter.addEventListener('change', renderCalendar);
-    monthFilter.addEventListener('change', renderCalendar);
+    countryFilter.addEventListener('change', () => {
+        renderCalendar();
+        updateMapMarkers();
+    });
+    
+    monthFilter.addEventListener('change', () => {
+        renderCalendar();
+        updateMapMarkers();
+    });
 
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
@@ -237,6 +361,45 @@ function setupEventListeners() {
             modal.style.display = 'none';
         }
     });
+}
+
+// Обновление маркеров на карте при фильтрации
+function updateMapMarkers() {
+    const selectedCountry = countryFilter.value;
+    const selectedMonth = monthFilter.value;
+    
+    // Очищаем существующие маркеры
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+    
+    // Фильтруем события
+    let filteredEvents = eventsData;
+    if (selectedCountry) {
+        filteredEvents = filteredEvents.filter(event => event.country === selectedCountry);
+    }
+    if (selectedMonth) {
+        filteredEvents = filteredEvents.filter(event => {
+            const eventDate = new Date(event.date);
+            return eventDate.getMonth() + 1 === parseInt(selectedMonth);
+        });
+    }
+    
+    // Добавляем маркеры для отфильтрованных событий
+    filteredEvents.forEach(event => {
+        if (event.coordinates) {
+            const marker = L.marker(event.coordinates)
+                .bindPopup(createPopupContent(event))
+                .addTo(map);
+            
+            markers.push(marker);
+        }
+    });
+    
+    // Если есть маркеры, центрируем карту на них
+    if (markers.length > 0) {
+        const group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds().pad(0.1));
+    }
 }
 
 // Настройка переключения видов
@@ -255,6 +418,14 @@ function setupViewToggle() {
             // Добавляем активный класс к выбранной кнопке и виду
             button.classList.add('active');
             document.getElementById(targetView + 'View').classList.add('active');
+            
+            // Если переключаемся на карту, обновляем её размер
+            if (targetView === 'map' && map) {
+                setTimeout(() => {
+                    map.invalidateSize();
+                    updateMapMarkers();
+                }, 100);
+            }
         });
     });
 }
@@ -266,12 +437,17 @@ function renderCalendar() {
     const startDate = new Date(firstDay);
     startDate.setDate(startDate.getDate() - firstDay.getDay() + 1);
     
-    const monthNames = [
-        'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
-    ];
+    const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
+    const monthNames = {
+        ru: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        fr: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        es: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+        it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+    };
     
-    currentMonthElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+    currentMonthElement.textContent = `${monthNames[currentLang] ? monthNames[currentLang][currentMonth] : monthNames.ru[currentMonth]} ${currentYear}`;
     
     calendarDays.innerHTML = '';
     
@@ -345,43 +521,52 @@ function renderCalendar() {
 
 // Показ деталей события
 function showEventDetails(event) {
+    const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
+    const monthNames = {
+        ru: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        fr: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        es: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+        it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+    };
+    
+    const eventDate = new Date(event.date);
+    const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.ru[eventDate.getMonth()];
+    
     eventDetails.innerHTML = `
         <div class="event-detail">
             <h3>${event.event}</h3>
             <div class="event-info">
                 <div class="event-info-item">
-                    <strong>Трек:</strong>
+                    <strong>${translations[currentLang]?.track || 'Track'}:</strong>
                     ${event.track}
                 </div>
                 <div class="event-info-item">
-                    <strong>Страна:</strong>
+                    <strong>${translations[currentLang]?.country || 'Country'}:</strong>
                     ${event.flag} ${event.countryName}
                 </div>
                 <div class="event-info-item">
-                    <strong>Дата:</strong>
-                    ${new Date(event.date).toLocaleDateString('ru-RU', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })}
+                    <strong>${translations[currentLang]?.date || 'Date'}:</strong>
+                    ${eventDate.getDate()} ${monthName} ${eventDate.getFullYear()}
                 </div>
                 <div class="event-info-item">
-                    <strong>Тип события:</strong>
+                    <strong>${translations[currentLang]?.eventType || 'Event type'}:</strong>
                     ${event.event.split(' - ')[0]}
                 </div>
             </div>
             <div class="event-description">
-                <strong>Описание:</strong><br>
+                <strong>${translations[currentLang]?.description || 'Description'}:</strong><br>
                 ${event.description}
             </div>
             <div class="event-links">
                 <a href="${event.website}" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
-                    Официальный сайт трека
+                    ${translations[currentLang]?.officialWebsite || 'Official website'}
                 </a>
                 <a href="#" onclick="searchEvent('${event.event}')">
                     <i class="fas fa-search"></i>
-                    Поиск информации
+                    ${translations[currentLang]?.searchInfo || 'Search information'}
                 </a>
             </div>
         </div>
