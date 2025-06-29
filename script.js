@@ -111,43 +111,6 @@ function createRedMarker(event) {
     return redIcon;
 }
 
-// Инициализация карты
-function initializeMap() {
-    if (map) {
-        map.remove();
-    }
-    
-    map = L.map('map').setView([50.0, 10.0], 5);
-    
-    // Добавляем темную карту
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '©OpenStreetMap, ©CartoDB',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
-    
-    // Добавляем маркеры для всех треков
-    addTrackMarkers();
-}
-
-// Добавление маркеров треков на карту
-function addTrackMarkers() {
-    // Очищаем существующие маркеры
-    markers.forEach(marker => map.removeLayer(marker));
-    markers = [];
-    
-    eventsData.forEach(event => {
-        if (event.coordinates) {
-            const customIcon = createRedMarker(event);
-            const marker = L.marker(event.coordinates, { icon: customIcon })
-                .bindPopup(createPopupContent(event))
-                .addTo(map);
-            
-            markers.push(marker);
-        }
-    });
-}
-
 // Создание содержимого попапа для маркера
 function createPopupContent(event) {
     const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
