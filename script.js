@@ -12,23 +12,20 @@ const calendarDays = document.getElementById('calendarDays');
 const currentMonthElement = document.getElementById('currentMonth');
 const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
-// Удаляю старые DOM-селекторы countryFilter и monthFilter
-// const countryFilter = document.getElementById('countryFilter');
-// const monthFilter = document.getElementById('monthFilter');
 const modal = document.getElementById('eventModal');
 const eventDetails = document.getElementById('eventDetails');
 const closeModal = document.querySelector('.close');
 
 // --- Кастомный multiselect ---
 const countryOptions = [
-    { value: 'spain', label: translations[getStoredLanguage()].spain, flag: '🇪🇸' },
-    { value: 'france', label: translations[getStoredLanguage()].france, flag: '🇫🇷' },
-    { value: 'germany', label: translations[getStoredLanguage()].germany, flag: '🇩🇪' },
-    { value: 'austria', label: translations[getStoredLanguage()].austria, flag: '🇦🇹' },
-    { value: 'czech', label: translations[getStoredLanguage()].czech, flag: '🇨🇿' },
-    { value: 'netherlands', label: translations[getStoredLanguage()].netherlands, flag: '🇳🇱' },
-    { value: 'uk', label: translations[getStoredLanguage()].uk, flag: '🇬🇧' },
-    { value: 'portugal', label: translations[getStoredLanguage()].portugal, flag: '🇵🇹' },
+    { value: 'Spain', label: translations[getStoredLanguage()].spain, flag: '🇪🇸' },
+    { value: 'France', label: translations[getStoredLanguage()].france, flag: '🇫🇷' },
+    { value: 'Germany', label: translations[getStoredLanguage()].germany, flag: '🇩🇪' },
+    { value: 'Austria', label: translations[getStoredLanguage()].austria, flag: '🇦🇹' },
+    { value: 'Czech', label: translations[getStoredLanguage()].czech, flag: '🇨🇿' },
+    { value: 'Netherlands', label: translations[getStoredLanguage()].netherlands, flag: '🇳🇱' },
+    { value: 'Uk', label: translations[getStoredLanguage()].uk, flag: '🇬🇧' },
+    { value: 'Portugal', label: translations[getStoredLanguage()].portugal, flag: '🇵🇹' },
 ];
 const monthOptions = [
     { value: '1', label: translations[getStoredLanguage()].january },

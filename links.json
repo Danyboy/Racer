@@ -36,6 +36,14 @@
     "country": "Spain"
   },
   {
+    "club": "Circuit calafat",
+    "website": "https://circuitcalafat.com/calendario-eventos/",
+    "tracks": [
+      "calafat"
+    ],
+    "country": "Spain"
+  },
+  {
     "club": "Sprint Track League",
     "website": "https://sprinttrackleague.com/calendario/",
     "tracks": [
