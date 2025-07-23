@@ -44,8 +44,14 @@ const monthOptions = [
     { value: '11', label: translations[getStoredLanguage()].november },
     { value: '12', label: translations[getStoredLanguage()].december },
 ];
+const yearOptions = [
+    { value: '2024', label: '2024' },
+    { value: '2025', label: '2025' },
+    { value: '2026', label: '2026' }
+];
+let yearMulti;
 
-function createCustomMultiselect(containerId, options, placeholder, onChange) {
+function createCustomMultiselect(containerId, options, placeholder, onChange, singleSelect = false) {
     const container = document.getElementById(containerId);
     container.innerHTML = '';
     const box = document.createElement('div');
@@ -70,28 +76,48 @@ function createCustomMultiselect(containerId, options, placeholder, onChange) {
         optDiv.innerHTML = `<input type="checkbox" value="${opt.value}"> ${opt.flag ? `<span>${opt.flag}</span>` : ''} ${opt.label}`;
         optionsDiv.appendChild(optDiv);
         const cb = optDiv.querySelector('input');
-        // Клик по чекбоксу
+        cb.type = singleSelect ? 'radio' : 'checkbox';
+        cb.name = singleSelect ? containerId + '_radio' : undefined;
+        // Клик по чекбоксу/радио
         cb.addEventListener('click', e => {
             e.stopPropagation();
-            if (cb.checked) {
-                if (!selected.includes(opt.value)) selected.push(opt.value);
+            if (singleSelect) {
+                selected = [opt.value];
+                Array.from(optionsDiv.children).forEach(div => {
+                    const c = div.querySelector('input');
+                    c.checked = (c === cb);
+                    div.classList.toggle('selected', c.checked);
+                });
             } else {
-                selected = selected.filter(v => v !== opt.value);
-            }
-            optDiv.classList.toggle('selected', cb.checked);
-            updateBoxText();
-            onChange(selected);
-        });
-        // Клик по строке
-        optDiv.addEventListener('click', e => {
-            if (e.target !== cb) {
-                cb.checked = !cb.checked;
                 if (cb.checked) {
                     if (!selected.includes(opt.value)) selected.push(opt.value);
                 } else {
                     selected = selected.filter(v => v !== opt.value);
                 }
                 optDiv.classList.toggle('selected', cb.checked);
+            }
+            updateBoxText();
+            onChange(selected);
+        });
+        // Клик по строке
+        optDiv.addEventListener('click', e => {
+            if (e.target !== cb) {
+                if (singleSelect) {
+                    selected = [opt.value];
+                    Array.from(optionsDiv.children).forEach(div => {
+                        const c = div.querySelector('input');
+                        c.checked = (div === optDiv);
+                        div.classList.toggle('selected', c.checked);
+                    });
+                } else {
+                    cb.checked = !cb.checked;
+                    if (cb.checked) {
+                        if (!selected.includes(opt.value)) selected.push(opt.value);
+                    } else {
+                        selected = selected.filter(v => v !== opt.value);
+                    }
+                    optDiv.classList.toggle('selected', cb.checked);
+                }
                 updateBoxText();
                 onChange(selected);
             }
@@ -174,14 +200,14 @@ function saveLanguage(lang) {
 function getMultiSelectValues(select) {
     if (select === countryFilter && countryMulti) return countryMulti.getSelected();
     if (select === monthFilter && monthMulti) return monthMulti.getSelected();
+    if (select === yearMulti && yearMulti) return yearMulti.getSelected();
     // fallback (старый код)
     return [];
 }
 
 // --- ДОБАВЛЕНО: Получение выбранного года ---
 function getSelectedYear() {
-    const yearFilter = document.getElementById('yearFilter');
-    return yearFilter ? parseInt(yearFilter.value) : currentYear;
+    return yearMulti && yearMulti.getSelected().length ? parseInt(yearMulti.getSelected()[0]) : currentYear;
 }
 
 // --- ДОБАВЛЕНО: Заполнение select годов ---
@@ -249,9 +275,8 @@ function applyStateFromURL() {
         monthMulti.setSelected(vals);
     }
     // Год
-    if (params.has('year')) {
-        const yearFilter = document.getElementById('yearFilter');
-        if (yearFilter) yearFilter.value = params.get('year');
+    if (params.has('year') && yearMulti) {
+        yearMulti.setSelected([params.get('year')]);
         currentYear = parseInt(params.get('year'));
     }
     // Вкладка
@@ -307,6 +332,21 @@ document.addEventListener('DOMContentLoaded', function() {
             updateMapMarkers();
             updateURLFromState();
         }
+    );
+    yearMulti = createCustomMultiselect(
+        'yearMultiSelect',
+        yearOptions,
+        '2024',
+        (selected) => {
+            if (selected.length) {
+                currentYear = parseInt(selected[0]);
+                renderCalendar();
+                renderEventList();
+                updateMapMarkers();
+                updateURLFromState();
+            }
+        },
+        true // одиночный выбор
     );
     applyStateFromURL();
     setupLanguageFlags(getStoredLanguage());
