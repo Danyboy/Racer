@@ -259,7 +259,7 @@ function renderEventList() {
     let html = `<table class="event-list-table"><thead><tr><th>${translations[currentLang]?.date||'Date'}</th><th>${translations[currentLang]?.eventType||'Type'}</th><th>${translations[currentLang]?.track||'Track'}</th><th>${translations[currentLang]?.country||'Country'}</th><th>${translations[currentLang]?.officialWebsite||'Site'}</th></tr></thead><tbody>`;
     for (const e of filtered) {
         const d = new Date(e.date || e.day);
-        html += `<tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event ? e.event.split(' - ')[0] : ''}</td><td>${e.track}</td><td>${e.flag}</td><td><a href="${e.organizer_url}" target="_blank">${translations[currentLang]?.officialWebsite||'Site'}</a></td></tr>`;    }
+        html += `<tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event ? e.event.split(' - ')[0] : ''}</td><td>${e.track}</td><td>${e.flag}</td><td><a href="${e.organizer_url}" target="_blank">${e.organizer_url||'Site'}</a></td></tr>`;    }
     html += '</tbody></table>';
     eventListContainer.innerHTML = html;
 }
@@ -551,7 +551,7 @@ function renderCalendar() {
     }
     if (selectedMonth) {
         filteredEvents = filteredEvents.filter(event => {
-            const eventDate = new Date(event.date);
+            const eventDate = new Date(event.day);
             return eventDate.getMonth() + 1 === parseInt(selectedMonth);
         });
     }
@@ -582,7 +582,7 @@ function renderCalendar() {
         
         // Поиск событий для этого дня
         const dayEvents = filteredEvents.filter(event => {
-            const eventDate = new Date(event.date);
+            const eventDate = new Date(event.day);
             return eventDate.toDateString() === date.toDateString();
         });
         
@@ -621,7 +621,7 @@ function showEventDetails(event) {
         it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
     };
     
-    const eventDate = new Date(event.date);
+    const eventDate = new Date(event.day);
     const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.en[eventDate.getMonth()];
     
     eventDetails.innerHTML = `
