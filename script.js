@@ -45,7 +45,6 @@ const monthOptions = [
     { value: '12', label: translations[getStoredLanguage()].december },
 ];
 const yearOptions = [
-    { value: '2024', label: '2024' },
     { value: '2025', label: '2025' },
     { value: '2026', label: '2026' }
 ];
@@ -374,7 +373,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     yearMulti = createCustomMultiselect(
         'yearMultiSelect',
         yearOptions,
-        '2024',
+        '2025',
         (selected) => {
             if (selected.length) {
                 currentYear = parseInt(selected[0]);
@@ -669,7 +668,7 @@ function showEventDetails(event) {
 
 // Функция поиска события
 function searchEvent(eventName) {
-    const searchQuery = encodeURIComponent(eventName + ' 2024');
+    const searchQuery = encodeURIComponent(eventName + ' 2025');
     window.open(`https://www.google.com/search?q=${searchQuery}`, '_blank');
 }
 
@@ -680,7 +679,7 @@ function exportEventsToJSON() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'racing_events_2024.json';
+    a.download = 'racing_events_2025.json';
     a.click();
     URL.revokeObjectURL(url);
 }
