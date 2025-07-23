@@ -257,8 +257,29 @@ function applyStateFromURL() {
     // Вкладка
     if (params.has('view')) {
         const view = params.get('view');
+        // Явно активируем нужную вкладку
+        const viewButtons = document.querySelectorAll('.view-toggle button');
+        const views = document.querySelectorAll('.view');
+        viewButtons.forEach(btn => btn.classList.remove('active'));
+        views.forEach(v => v.classList.remove('active'));
         const btn = document.querySelector(`.view-toggle button[data-view="${view}"]`);
-        if (btn) btn.click();
+        const viewDiv = document.getElementById(view + 'View');
+        if (btn && viewDiv) {
+            btn.classList.add('active');
+            viewDiv.classList.add('active');
+            if (view === 'list') {
+                renderEventList();
+            } else if (view === 'calendar') {
+                renderCalendar();
+            } else if (view === 'map') {
+                setTimeout(() => {
+                    if (window.map) {
+                        map.invalidateSize();
+                        updateMapMarkers();
+                    }
+                }, 100);
+            }
+        }
     }
 }
 
