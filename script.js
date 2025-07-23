@@ -259,7 +259,7 @@ function renderEventList() {
     let html = `<table class="event-list-table"><thead><tr><th>${translations[currentLang]?.date||'Date'}</th><th>${translations[currentLang]?.eventType||'Type'}</th><th>${translations[currentLang]?.track||'Track'}</th><th>${translations[currentLang]?.country||'Country'}</th><th>${translations[currentLang]?.officialWebsite||'Site'}</th></tr></thead><tbody>`;
     for (const e of filtered) {
         const d = new Date(e.date || e.day);
-        html += <tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event ? e.event.split(' - ')[0] : ''}</td><td>${e.track}</td><td>${e.flag} ${e.countryName}</td><td><a href="${e.website}" target="_blank">${translations[currentLang]?.officialWebsite||'Site'}</a></td></tr>;    }
+        html += `<tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event ? e.event.split(' - ')[0] : ''}</td><td>${e.track}</td><td>${e.flag} ${e.countryName}</td><td><a href="${e.website}" target="_blank">${translations[currentLang]?.officialWebsite||'Site'}</a></td></tr>`;    }
     html += '</tbody></table>';
     eventListContainer.innerHTML = html;
 }
