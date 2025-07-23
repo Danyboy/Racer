@@ -23,7 +23,6 @@ function addTrackMarkers() {
 
   tracks.tracks.forEach(track => {
     if (track.coordinates) {
-      console.log(track.id)
       const customIcon = createRedMarker(track);
       // const marker = L.marker([track.coordinates.lat, track.coordinates.lng], { icon: customIcon })
       const marker = L.marker([track.coordinates.lat, track.coordinates.lng])
@@ -61,7 +60,7 @@ function createRedMarker(event) {
     className: 'custom-marker',
     html: `
           <div class="marker-container">
-              <div class="marker-title">${event.id}</div>
+              <div class="marker-title">${event.track || event.name || ''}</div>
               <div class="marker-pin">🏁</div>
           </div>
       `,
@@ -95,19 +94,18 @@ function createPopupContent(event) {
 
   return `
       <div class="popup-content">
-          <h3>${event.flag} ${event.id}</h3>
+          <h3>${event.flag} ${event.track || event.name || ''}</h3>
           <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${event.country}</p>
-          <a href="${event.website}" target="_blank">${translations[currentLang]?.official_website || translations.en.officialWebsite}</a>
+          <a href="${event.official_website || event.website || ''}" target="_blank">${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}</a>
       </div>
   `;
 }
 
 // Обновление маркеров на карте при фильтрации
 function updateMapMarkers() {
-  return
-
-  const selectedCountry = countryFilter.value;
-  const selectedMonth = monthFilter.value;
+  if (!window.countryFilter || !window.monthFilter) return;
+  const selectedCountries = window.countryFilter.selectedOptions.map(opt => opt.value);
+  const selectedMonths = window.monthFilter.selectedOptions.map(opt => opt.value);
 
   // Очищаем существующие маркеры
   markers.forEach(marker => map.removeLayer(marker));
@@ -115,13 +113,13 @@ function updateMapMarkers() {
 
   // Фильтруем события
   let filteredEvents = eventsData;
-  if (selectedCountry) {
-    filteredEvents = filteredEvents.filter(event => event.country === selectedCountry);
+  if (selectedCountries.length) {
+    filteredEvents = filteredEvents.filter(event => selectedCountries.includes(event.country));
   }
-  if (selectedMonth) {
+  if (selectedMonths.length) {
     filteredEvents = filteredEvents.filter(event => {
       const eventDate = new Date(event.date);
-      return eventDate.getMonth() + 1 === parseInt(selectedMonth);
+      return selectedMonths.includes(String(eventDate.getMonth() + 1));
     });
   }
 

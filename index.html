@@ -43,37 +43,17 @@
                 <button class="active" data-view="calendar">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="calendar">Calendar</span>
                 </button>
+                <button data-view="list">
+                    <i class="fas fa-list"></i> <span data-i18n="list">List</span>
+                </button>
                 <button data-view="map">
                     <i class="fas fa-map-marked-alt"></i> <span data-i18n="map">Map</span>
                 </button>
             </div>
             <div class="filter-controls">
-                <select id="countryFilter">
-                    <option value="" data-i18n="allCountries">All Countries</option>
-                    <option value="spain" data-i18n="spain">Spain</option>
-                    <option value="france" data-i18n="france">France</option>
-                    <option value="germany" data-i18n="germany">Germany</option>
-                    <option value="austria" data-i18n="austria">Austria</option>
-                    <option value="czech" data-i18n="czech">Czech Republic</option>
-                    <option value="netherlands" data-i18n="netherlands">Netherlands</option>
-                    <option value="uk" data-i18n="uk">United Kingdom</option>
-                    <option value="portugal" data-i18n="portugal">Portugal</option>
-                </select>
-                <select id="monthFilter">
-                    <option value="" data-i18n="allMonths">All Months</option>
-                    <option value="1" data-i18n="january">January</option>
-                    <option value="2" data-i18n="february">February</option>
-                    <option value="3" data-i18n="march">March</option>
-                    <option value="4" data-i18n="april">April</option>
-                    <option value="5" data-i18n="may">May</option>
-                    <option value="6" data-i18n="june">June</option>
-                    <option value="7" data-i18n="july">July</option>
-                    <option value="8" data-i18n="august">August</option>
-                    <option value="9" data-i18n="september">September</option>
-                    <option value="10" data-i18n="october">October</option>
-                    <option value="11" data-i18n="november">November</option>
-                    <option value="12" data-i18n="december">December</option>
-                </select>
+                <div id="countryMultiSelect" class="custom-multiselect"></div>
+                <div id="monthMultiSelect" class="custom-multiselect"></div>
+                <select id="yearFilter"></select>
             </div>
         </div>
 
@@ -98,7 +78,10 @@
                     <div id="calendarDays" class="calendar-days"></div>
                 </div>
             </div>
-
+            <!-- Список событий -->
+            <div id="listView" class="view">
+                <div id="eventListContainer"></div>
+            </div>
             <!-- Карта -->
             <div id="mapView" class="view">
                 <div id="map" class="map-container"></div>

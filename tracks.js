@@ -327,6 +327,7 @@ const tracks =
             "location": "Le Castellet, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 43.2500,
                 "lng": 5.8500
@@ -360,6 +361,7 @@ const tracks =
             "location": "Le Mans, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 47.9333,
                 "lng": 0.2167
@@ -391,6 +393,7 @@ const tracks =
             "location": "Magny-Cours, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 46.8833,
                 "lng": 3.1500
@@ -422,6 +425,7 @@ const tracks =
             "location": "Dijon, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 47.2667,
                 "lng": 5.1000
@@ -453,6 +457,7 @@ const tracks =
             "location": "Nogaro, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 43.7667,
                 "lng": -0.0333
@@ -484,6 +489,7 @@ const tracks =
             "location": "Ledenon, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 43.9167,
                 "lng": 4.5167
@@ -515,6 +521,7 @@ const tracks =
             "location": "Clermont-Ferrand, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 45.7833,
                 "lng": 3.1000
@@ -546,6 +553,7 @@ const tracks =
             "location": "Le Mans, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 47.9333,
                 "lng": 0.2167
@@ -577,6 +585,7 @@ const tracks =
             "location": "Le Vigeant, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 46.2333,
                 "lng": 0.6833
@@ -608,6 +617,7 @@ const tracks =
             "location": "Albi, France",
             "country_code": "FR",
             "country": "France",
+            "flag": "🇫🇷",
             "coordinates": {
                 "lat": 43.9333,
                 "lng": 2.1500
@@ -639,7 +649,7 @@ const tracks =
             "location": "Nürburg, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 50.3333,
                 "lng": 6.9500
@@ -671,7 +681,7 @@ const tracks =
             "location": "Nürburg, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 50.3333,
                 "lng": 6.9500
@@ -703,7 +713,7 @@ const tracks =
             "location": "Hockenheim, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 49.3333,
                 "lng": 8.5667
@@ -735,7 +745,7 @@ const tracks =
             "location": "Hohenstein-Ernstthal, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 50.8000,
                 "lng": 12.7167
@@ -766,7 +776,7 @@ const tracks =
             "location": "Klettwitz, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 51.5333,
                 "lng": 13.9000
@@ -798,7 +808,7 @@ const tracks =
             "location": "Oschersleben, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 52.0333,
                 "lng": 11.2333
@@ -830,7 +840,7 @@ const tracks =
             "location": "Bad Driburg, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 51.7333,
                 "lng": 9.0167
@@ -862,7 +872,7 @@ const tracks =
             "location": "Nuremberg, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 49.4500,
                 "lng": 11.0833
@@ -892,7 +902,7 @@ const tracks =
             "location": "Meppen, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 52.7000,
                 "lng": 7.3000
@@ -922,7 +932,7 @@ const tracks =
             "location": "Meppen, Germany",
             "country_code": "DE",
             "country": "Germany",
-      "flag": "🇩🇪",
+            "flag": "🇩🇪",
             "coordinates": {
                 "lat": 52.7000,
                 "lng": 7.3000

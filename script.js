@@ -12,11 +12,122 @@ const calendarDays = document.getElementById('calendarDays');
 const currentMonthElement = document.getElementById('currentMonth');
 const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
-const countryFilter = document.getElementById('countryFilter');
-const monthFilter = document.getElementById('monthFilter');
+// Удаляю старые DOM-селекторы countryFilter и monthFilter
+// const countryFilter = document.getElementById('countryFilter');
+// const monthFilter = document.getElementById('monthFilter');
 const modal = document.getElementById('eventModal');
 const eventDetails = document.getElementById('eventDetails');
 const closeModal = document.querySelector('.close');
+
+// --- Кастомный multiselect ---
+const countryOptions = [
+    { value: 'spain', label: translations[getStoredLanguage()].spain, flag: '🇪🇸' },
+    { value: 'france', label: translations[getStoredLanguage()].france, flag: '🇫🇷' },
+    { value: 'germany', label: translations[getStoredLanguage()].germany, flag: '🇩🇪' },
+    { value: 'austria', label: translations[getStoredLanguage()].austria, flag: '🇦🇹' },
+    { value: 'czech', label: translations[getStoredLanguage()].czech, flag: '🇨🇿' },
+    { value: 'netherlands', label: translations[getStoredLanguage()].netherlands, flag: '🇳🇱' },
+    { value: 'uk', label: translations[getStoredLanguage()].uk, flag: '🇬🇧' },
+    { value: 'portugal', label: translations[getStoredLanguage()].portugal, flag: '🇵🇹' },
+];
+const monthOptions = [
+    { value: '1', label: translations[getStoredLanguage()].january },
+    { value: '2', label: translations[getStoredLanguage()].february },
+    { value: '3', label: translations[getStoredLanguage()].march },
+    { value: '4', label: translations[getStoredLanguage()].april },
+    { value: '5', label: translations[getStoredLanguage()].may },
+    { value: '6', label: translations[getStoredLanguage()].june },
+    { value: '7', label: translations[getStoredLanguage()].july },
+    { value: '8', label: translations[getStoredLanguage()].august },
+    { value: '9', label: translations[getStoredLanguage()].september },
+    { value: '10', label: translations[getStoredLanguage()].october },
+    { value: '11', label: translations[getStoredLanguage()].november },
+    { value: '12', label: translations[getStoredLanguage()].december },
+];
+
+function createCustomMultiselect(containerId, options, placeholder, onChange) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    const box = document.createElement('div');
+    box.className = 'select-box';
+    box.tabIndex = 0;
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'options';
+    let selected = [];
+    function updateBoxText() {
+        if (selected.length === 0) {
+            box.innerHTML = `<span class="placeholder">${placeholder}</span>`;
+        } else {
+            box.innerHTML = selected.map(v => {
+                const opt = options.find(o => o.value === v);
+                return opt.flag ? `${opt.flag} ${opt.label}` : opt.label;
+            }).join(', ');
+        }
+    }
+    options.forEach(opt => {
+        const optDiv = document.createElement('div');
+        optDiv.className = 'option';
+        optDiv.innerHTML = `<input type="checkbox" value="${opt.value}"> ${opt.flag ? `<span>${opt.flag}</span>` : ''} ${opt.label}`;
+        optionsDiv.appendChild(optDiv);
+        optDiv.addEventListener('click', e => {
+            e.stopPropagation();
+            const cb = optDiv.querySelector('input');
+            cb.checked = !cb.checked;
+            if (cb.checked) {
+                selected.push(opt.value);
+            } else {
+                selected = selected.filter(v => v !== opt.value);
+            }
+            optDiv.classList.toggle('selected', cb.checked);
+            updateBoxText();
+            onChange(selected);
+        });
+    });
+    box.addEventListener('click', e => {
+        e.stopPropagation();
+        container.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+        container.classList.remove('open');
+    });
+    container.appendChild(box);
+    container.appendChild(optionsDiv);
+    updateBoxText();
+    return {
+        getSelected: () => selected,
+        setSelected: (vals) => {
+            selected = vals;
+            Array.from(optionsDiv.children).forEach(optDiv => {
+                const cb = optDiv.querySelector('input');
+                cb.checked = selected.includes(cb.value);
+                optDiv.classList.toggle('selected', cb.checked);
+            });
+            updateBoxText();
+        }
+    };
+}
+
+let countryMulti, monthMulti;
+
+// Обёртки для совместимости со старым кодом (и для map.js)
+const countryFilter = {
+    get value() {
+        return (countryMulti && countryMulti.getSelected()[0]) || '';
+    },
+    get selectedOptions() {
+        return (countryMulti ? countryMulti.getSelected().map(v => ({ value: v })) : []);
+    }
+};
+const monthFilter = {
+    get value() {
+        return (monthMulti && monthMulti.getSelected()[0]) || '';
+    },
+    get selectedOptions() {
+        return (monthMulti ? monthMulti.getSelected().map(v => ({ value: v })) : []);
+    }
+};
+window.countryFilter = countryFilter;
+window.monthFilter = monthFilter;
 
 // Функция для получения языка из localStorage или браузера
 function getStoredLanguage() {
@@ -45,12 +156,128 @@ function saveLanguage(lang) {
     localStorage.setItem('racer-language', lang);
 }
 
+// --- ДОБАВЛЕНО: Получение выбранных значений для мультивыбора ---
+function getMultiSelectValues(select) {
+    if (select === countryFilter && countryMulti) return countryMulti.getSelected();
+    if (select === monthFilter && monthMulti) return monthMulti.getSelected();
+    // fallback (старый код)
+    return [];
+}
+
+// --- ДОБАВЛЕНО: Получение выбранного года ---
+function getSelectedYear() {
+    const yearFilter = document.getElementById('yearFilter');
+    return yearFilter ? parseInt(yearFilter.value) : currentYear;
+}
+
+// --- ДОБАВЛЕНО: Заполнение select годов ---
+function fillYearFilter() {
+    const yearFilter = document.getElementById('yearFilter');
+    if (!yearFilter) return;
+    const years = Array.from(new Set(eventsData.map(e => new Date(e.date).getFullYear()))).sort((a,b)=>a-b);
+    yearFilter.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+    yearFilter.value = currentYear;
+}
+
+// --- ДОБАВЛЕНО: Рендер списка событий ---
+function renderEventList() {
+    const eventListContainer = document.getElementById('eventListContainer');
+    if (!eventListContainer) return;
+    const countryVals = getMultiSelectValues(countryFilter);
+    const monthVals = getMultiSelectValues(monthFilter).map(Number);
+    const yearVal = getSelectedYear();
+    const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
+    let filtered = eventsData.filter(e => {
+        const d = new Date(e.date);
+        const matchCountry = !countryVals.length || countryVals.includes(e.country);
+        const matchMonth = !monthVals.length || monthVals.includes(d.getMonth()+1);
+        const matchYear = !yearVal || d.getFullYear() === yearVal;
+        return matchCountry && matchMonth && matchYear;
+    });
+    filtered.sort((a,b)=>new Date(a.date)-new Date(b.date));
+    let html = `<table class="event-list-table"><thead><tr><th>${translations[currentLang]?.date||'Date'}</th><th>${translations[currentLang]?.eventType||'Type'}</th><th>${translations[currentLang]?.track||'Track'}</th><th>${translations[currentLang]?.country||'Country'}</th><th>${translations[currentLang]?.officialWebsite||'Site'}</th></tr></thead><tbody>`;
+    for (const e of filtered) {
+        const d = new Date(e.date);
+        html += `<tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event.split(' - ')[0]}</td><td>${e.track}</td><td>${e.flag} ${e.countryName}</td><td><a href="${e.website}" target="_blank">${translations[currentLang]?.officialWebsite||'Site'}</a></td></tr>`;
+    }
+    html += '</tbody></table>';
+    eventListContainer.innerHTML = html;
+}
+
+// --- ДОБАВЛЕНО: Синхронизация фильтров и вкладок с URL ---
+function updateURLFromState() {
+    const params = new URLSearchParams();
+    // Страны
+    const c = getMultiSelectValues(countryFilter);
+    if (c.length) params.set('country', c.join(','));
+    // Месяцы
+    const m = getMultiSelectValues(monthFilter);
+    if (m.length) params.set('month', m.join(','));
+    // Год
+    const y = getSelectedYear();
+    if (y) params.set('year', y);
+    // Вкладка
+    const activeView = document.querySelector('.view-toggle button.active').getAttribute('data-view');
+    if (activeView) params.set('view', activeView);
+    history.replaceState(null, '', '?' + params.toString());
+}
+
+function applyStateFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    // Страны
+    if (params.has('country') && countryMulti) {
+        const vals = params.get('country').split(',');
+        countryMulti.setSelected(vals);
+    }
+    // Месяцы
+    if (params.has('month') && monthMulti) {
+        const vals = params.get('month').split(',');
+        monthMulti.setSelected(vals);
+    }
+    // Год
+    if (params.has('year')) {
+        const yearFilter = document.getElementById('yearFilter');
+        if (yearFilter) yearFilter.value = params.get('year');
+        currentYear = parseInt(params.get('year'));
+    }
+    // Вкладка
+    if (params.has('view')) {
+        const view = params.get('view');
+        const btn = document.querySelector(`.view-toggle button[data-view="${view}"]`);
+        if (btn) btn.click();
+    }
+}
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
-    const initialLang = getStoredLanguage();
-    setupLanguageFlags(initialLang);
-    translateInterface(initialLang);
+    fillYearFilter();
+    countryMulti = createCustomMultiselect(
+        'countryMultiSelect',
+        countryOptions,
+        translations[getStoredLanguage()].allCountries,
+        () => {
+            renderCalendar();
+            renderEventList();
+            updateMapMarkers();
+            updateURLFromState();
+        }
+    );
+    monthMulti = createCustomMultiselect(
+        'monthMultiSelect',
+        monthOptions,
+        translations[getStoredLanguage()].allMonths,
+        () => {
+            renderCalendar();
+            renderEventList();
+            updateMapMarkers();
+            updateURLFromState();
+        }
+    );
+    applyStateFromURL();
+    setupLanguageFlags(getStoredLanguage());
+    translateInterface(getStoredLanguage());
     renderCalendar();
+    renderEventList();
     setupEventListeners();
     setupViewToggle();
     initializeMap();
@@ -92,7 +319,7 @@ function setupLanguageFlags(initialLang = 'en') {
     });
 }
 
-// Настройка обработчиков событий
+// --- ДОБАВЛЕНО: Обновление рендера при изменении фильтров ---
 function setupEventListeners() {
     prevMonthBtn.addEventListener('click', () => {
         currentMonth--;
@@ -101,6 +328,7 @@ function setupEventListeners() {
             currentYear--;
         }
         renderCalendar();
+        updateURLFromState();
     });
 
     nextMonthBtn.addEventListener('click', () => {
@@ -110,17 +338,33 @@ function setupEventListeners() {
             currentYear++;
         }
         renderCalendar();
+        updateURLFromState();
     });
 
-    countryFilter.addEventListener('change', () => {
-        renderCalendar();
-        updateMapMarkers();
-    });
+    // countryFilter.addEventListener('change', () => { // This line is removed as countryFilter is now an object
+    //     renderCalendar();
+    //     renderEventList();
+    //     updateMapMarkers();
+    //     updateURLFromState();
+    // });
     
-    monthFilter.addEventListener('change', () => {
-        renderCalendar();
-        updateMapMarkers();
-    });
+    // monthFilter.addEventListener('change', () => { // This line is removed as monthFilter is now an object
+    //     renderCalendar();
+    //     renderEventList();
+    //     updateMapMarkers();
+    //     updateURLFromState();
+    // });
+
+    const yearFilter = document.getElementById('yearFilter');
+    if (yearFilter) {
+        yearFilter.addEventListener('change', () => {
+            currentYear = parseInt(yearFilter.value);
+            renderCalendar();
+            renderEventList();
+            updateMapMarkers();
+            updateURLFromState();
+        });
+    }
 
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
@@ -157,6 +401,10 @@ function setupViewToggle() {
                     updateMapMarkers();
                 }, 100);
             }
+            if (targetView === 'list') {
+                renderEventList();
+            }
+            updateURLFromState();
         });
     });
 }

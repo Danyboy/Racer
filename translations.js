@@ -41,6 +41,7 @@ const translations = {
         description: "Описание",
         officialWebsite: "Официальный сайт трека",
         searchInfo: "Поиск информации",
+        list: "Список",
         copyright: "© 2024 Racer - Гоночные события Европы"
     },
     en: {
@@ -84,6 +85,7 @@ const translations = {
         description: "Description",
         officialWebsite: "Official track website",
         searchInfo: "Search information",
+        list: "List",
         copyright: "© 2024 Racer - Racing events in Europe"
     },
     fr: {
@@ -127,6 +129,7 @@ const translations = {
         description: "Description",
         officialWebsite: "Site officiel du circuit",
         searchInfo: "Rechercher des informations",
+        list: "Liste",
         copyright: "© 2024 Racer - Événements de course en Europe"
     },
     es: {
@@ -170,6 +173,7 @@ const translations = {
         description: "Descripción",
         officialWebsite: "Sitio web oficial del circuito",
         searchInfo: "Buscar información",
+        list: "Lista",
         copyright: "© 2024 Racer - Eventos de carreras en Europa"
     },
     de: {
@@ -213,6 +217,7 @@ const translations = {
         description: "Beschreibung",
         officialWebsite: "Offizielle Streckenwebsite",
         searchInfo: "Informationen suchen",
+        list: "Liste",
         copyright: "© 2024 Racer - Rennveranstaltungen in Europa"
     },
     it: {
@@ -256,6 +261,7 @@ const translations = {
         description: "Descrizione",
         officialWebsite: "Sito ufficiale del circuito",
         searchInfo: "Cerca informazioni",
+        list: "Lista",
         copyright: "© 2024 Racer - Eventi di corse in Europa"
     }
 };
