@@ -241,13 +241,13 @@ function renderEventList() {
         });
         console.log('[EVENTS] После фильтрации по месяцам:', filtered.length);
     }
-    // if (yearVal) {
-    //     filtered = filtered.filter(e => {
-    //         const d = new Date(e.date || e.day);
-    //         return d.getFullYear() === yearVal;
-    //     });
-    //     console.log('[EVENTS] После фильтрации по году:', filtered.length);
-    // }
+    if (yearVal) {
+        filtered = filtered.filter(e => {
+            const d = new Date(e.date || e.day);
+            return d.getFullYear() === yearVal;
+        });
+        console.log('[EVENTS] После фильтрации по году:', filtered.length);
+    }
     filtered.sort((a,b)=>{
         const da = new Date(a.date || a.day);
         const db = new Date(b.date || b.day);
