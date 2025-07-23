@@ -1,4 +1,4 @@
-const tracks =
+window.tracks =
 {
     "tracks": [
         {
@@ -237,7 +237,7 @@ const tracks =
                 "lng": 1.7000
             },
             "google_maps_url": "https://maps.google.com/?q=Circuito+de+Castelloli+Catalonia",
-            "official_website": "https://www.parcmotor.com",
+            "official_website": "https://www.circuitparcmotor.com/es/circuitos/circuito-de-velocidad",
             "series": [
                 "GT",
                 "track_days"
@@ -247,7 +247,7 @@ const tracks =
             "clubs": [
                 {
                     "name": "Parcmotor Castellolí",
-                    "website": "https://www.parcmotor.com",
+                    "website": "https://www.circuitparcmotor.com/es/circuitos/circuito-de-velocidad",
                     "activities": [
                         "track_days",
                         "gt_racing",

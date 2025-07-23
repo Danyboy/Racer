@@ -1,0 +1,78 @@
+[
+  {
+    "club": "Grip Spain",
+    "website": "https://www.gripspain.com/",
+    "tracks": [
+      "barcelona-catalunya",
+      "jerez-angel-nieto",
+      "valencia-ricardo-tormo",
+      "navarra"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Tandas Privadas",
+    "website": "https://www.tandasprivadas.com/eventos/",
+    "tracks": [
+      "barcelona-catalunya",
+      "jerez-angel-nieto",
+      "valencia-ricardo-tormo"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Amazing Drives",
+    "website": "https://amazingdrives.es/calendario-de-eventos/",
+    "tracks": [
+      "jerez-angel-nieto",
+      "valencia-ricardo-tormo"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Sprint Track League",
+    "website": "https://sprinttrackleague.com/calendario/",
+    "tracks": [
+      "jerez-angel-nieto"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Trackrat Club",
+    "website": "https://www.trackratclub.com/calendario-track-days/",
+    "tracks": [
+      "barcelona-catalunya"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Track Days Events",
+    "website": "https://trackdaysevents.com/inscripciones/",
+    "tracks": [],
+    "country": "Spain"
+  },
+  {
+    "club": "FormulaGT",
+    "website": "https://www.formulagt.es/circuitos-y-fechas/",
+    "tracks": [],
+    "country": "Spain"
+  },
+  {
+    "club": "Volrace",
+    "website": "https://volrace.com/calendario-eventos-volrace/",
+    "tracks": [],
+    "country": "Spain"
+  },
+  {
+    "club": "Factoria RR",
+    "website": "https://www.factoriarr.com/",
+    "tracks": [],
+    "country": "Spain"
+  },
+  {
+    "club": "Club Evolution",
+    "website": "https://www.clubevolution.es/",
+    "tracks": [],
+    "country": "Spain"
+  }
+]

@@ -53,14 +53,14 @@ function addTrackMarkersOld() {
 }
 
 // Создание красного маркера с названием трека
-function createRedMarker(event) {
+function createRedMarker(track) {
   // Создаем кастомную иконку для маркера
 
   const redIcon = L.divIcon({
     className: 'custom-marker',
     html: `
           <div class="marker-container">
-              <div class="marker-title">${event.track || event.name || ''}</div>
+              <div class="marker-title">${track.name || track.track || ''}</div>
               <div class="marker-pin">🏁</div>
           </div>
       `,
@@ -74,7 +74,7 @@ function createRedMarker(event) {
 
 
 // Создание содержимого попапа для маркера
-function createPopupContent(event) {
+function createPopupContent(track) {
   const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
   const monthNames = {
     ru: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
@@ -85,7 +85,7 @@ function createPopupContent(event) {
     it: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
   };
 
-  const eventDate = new Date(event.date);
+  const eventDate = new Date(track.date);
   const monthName = monthNames[currentLang] ? monthNames[currentLang][eventDate.getMonth()] : monthNames.en[eventDate.getMonth()];
 
 //           <p><strong>${translations[currentLang]?.eventType || translations.en.eventType}:</strong> ${event.event}</p>
@@ -94,9 +94,9 @@ function createPopupContent(event) {
 
   return `
       <div class="popup-content">
-          <h3>${event.flag} ${event.track || event.name || ''}</h3>
-          <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${event.country}</p>
-          <a href="${event.official_website || event.website || ''}" target="_blank">${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}</a>
+          <h3>${track.flag || ''} ${track.name || track.track || ''}</h3>
+          <p><strong>${translations[currentLang]?.country || translations.en.country}:</strong> ${track.country || ''}</p>
+          <a href="${track.official_website || track.website || ''}" target="_blank">${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}</a>
       </div>
   `;
 }
@@ -105,33 +105,45 @@ function createPopupContent(event) {
 function updateMapMarkers() {
   if (!window.countryFilter || !window.monthFilter) return;
   const selectedCountries = window.countryFilter.selectedOptions.map(opt => opt.value);
-  const selectedMonths = window.monthFilter.selectedOptions.map(opt => opt.value);
+  const allTracks = (window.tracks && window.tracks.tracks) ? window.tracks.tracks : [];
+  console.log('[MAP] Всего треков:', allTracks.length);
+  console.log('[MAP] Выбранные страны:', selectedCountries);
 
   // Очищаем существующие маркеры
   markers.forEach(marker => map.removeLayer(marker));
   markers = [];
 
-  // Фильтруем события
-  let filteredEvents = eventsData;
+  // Фильтруем треки
+  let filteredTracks = allTracks;
   if (selectedCountries.length) {
-    filteredEvents = filteredEvents.filter(event => selectedCountries.includes(event.country));
-  }
-  if (selectedMonths.length) {
-    filteredEvents = filteredEvents.filter(event => {
-      const eventDate = new Date(event.date);
-      return selectedMonths.includes(String(eventDate.getMonth() + 1));
+    filteredTracks = filteredTracks.filter(track => {
+      const country = (track.country || '').toLowerCase();
+      const code = (track.country_code || '').toLowerCase();
+      return selectedCountries.includes(country) || selectedCountries.includes(code);
     });
   }
+  console.log('[MAP] Треков после фильтрации:', filteredTracks.length);
 
-  // Добавляем маркеры для отфильтрованных событий
-  filteredEvents.forEach(event => {
-    if (event.coordinates) {
-      const customIcon = createRedMarker(event);
-      const marker = L.marker(event.coordinates, { icon: customIcon })
-        .bindPopup(createPopupContent(event))
+  // Добавляем маркеры для отфильтрованных треков
+  filteredTracks.forEach(track => {
+    if (track.coordinates) {
+      let coords;
+      if (Array.isArray(track.coordinates)) {
+        coords = track.coordinates;
+      } else if (track.coordinates.lat !== undefined && track.coordinates.lng !== undefined) {
+        coords = [track.coordinates.lat, track.coordinates.lng];
+      } else {
+        console.log('[MAP] Нет координат для трека:', track);
+        return;
+      }
+      console.log('[MAP] Маркер:', track.name || track.track, coords);
+      const customIcon = createRedMarker(track);
+      const marker = L.marker(coords, { icon: customIcon })
+        .bindPopup(createPopupContent(track))
         .addTo(map);
-
       markers.push(marker);
+    } else {
+      console.log('[MAP] Нет координат для трека:', track);
     }
   });
 
@@ -139,5 +151,8 @@ function updateMapMarkers() {
   if (markers.length > 0) {
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds().pad(0.1));
+    console.log('[MAP] Центрирую карту на маркерах');
+  } else {
+    console.log('[MAP] Нет маркеров для отображения');
   }
 }
