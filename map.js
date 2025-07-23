@@ -1,5 +1,13 @@
 // Инициализация карты
-function initializeMap() {
+async function loadTracks() {
+  if (!window.tracks) {
+    const resp = await fetch('track.json');
+    window.tracks = await resp.json();
+  }
+}
+
+async function initializeMap() {
+  await loadTracks();
   if (map) {
     map.remove();
   }
@@ -21,7 +29,7 @@ function addTrackMarkers() {
   markers.forEach(marker => map.removeLayer(marker));
   markers = [];
 
-  tracks.tracks.forEach(track => {
+  window.tracks.tracks.forEach(track => {
     if (track.coordinates) {
       const customIcon = createRedMarker(track);
       // const marker = L.marker([track.coordinates.lat, track.coordinates.lng], { icon: customIcon })

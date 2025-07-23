@@ -308,8 +308,16 @@ function applyStateFromURL() {
     }
 }
 
+async function loadTracks() {
+  if (!window.tracks) {
+    const resp = await fetch('track.json');
+    window.tracks = await resp.json();
+  }
+}
+
 // Инициализация
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await loadTracks();
     fillYearFilter();
     countryMulti = createCustomMultiselect(
         'countryMultiSelect',
