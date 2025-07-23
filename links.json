@@ -44,6 +44,30 @@
     "country": "Spain"
   },
   {
+    "club": "Motorland Aragon",
+    "website": "https://www.motorlandaragon.com/es/eventos",
+    "tracks": [
+      "aragon"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "Circuito Kotarr",
+    "website": "https://www.circuitokotarr.com/eventos_1.html",
+    "tracks": [
+      "kotarr"
+    ],
+    "country": "Spain"
+  },
+  {
+    "club": "circuito de jerez",
+    "website": "https://circuitodejerez.com/calendario/",
+    "tracks": [
+      "jerez"
+    ],
+    "country": "Spain"
+  },
+  {
     "club": "Sprint Track League",
     "website": "https://sprinttrackleague.com/calendario/",
     "tracks": [
