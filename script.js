@@ -69,18 +69,32 @@ function createCustomMultiselect(containerId, options, placeholder, onChange) {
         optDiv.className = 'option';
         optDiv.innerHTML = `<input type="checkbox" value="${opt.value}"> ${opt.flag ? `<span>${opt.flag}</span>` : ''} ${opt.label}`;
         optionsDiv.appendChild(optDiv);
-        optDiv.addEventListener('click', e => {
+        const cb = optDiv.querySelector('input');
+        // Клик по чекбоксу
+        cb.addEventListener('click', e => {
             e.stopPropagation();
-            const cb = optDiv.querySelector('input');
-            cb.checked = !cb.checked;
             if (cb.checked) {
-                selected.push(opt.value);
+                if (!selected.includes(opt.value)) selected.push(opt.value);
             } else {
                 selected = selected.filter(v => v !== opt.value);
             }
             optDiv.classList.toggle('selected', cb.checked);
             updateBoxText();
             onChange(selected);
+        });
+        // Клик по строке
+        optDiv.addEventListener('click', e => {
+            if (e.target !== cb) {
+                cb.checked = !cb.checked;
+                if (cb.checked) {
+                    if (!selected.includes(opt.value)) selected.push(opt.value);
+                } else {
+                    selected = selected.filter(v => v !== opt.value);
+                }
+                optDiv.classList.toggle('selected', cb.checked);
+                updateBoxText();
+                onChange(selected);
+            }
         });
     });
     box.addEventListener('click', e => {
