@@ -227,17 +227,39 @@ function renderEventList() {
     const monthVals = getMultiSelectValues(monthFilter).map(Number);
     const yearVal = getSelectedYear();
     const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
-    let filtered = window.eventsData.filter(e => {
-        const d = new Date(e.date);
-        const matchCountry = !countryVals.length || countryVals.includes(e.country);
-        const matchMonth = !monthVals.length || monthVals.includes(d.getMonth()+1);
-        const matchYear = !yearVal || d.getFullYear() === yearVal;
-        return matchCountry && matchMonth && matchYear;
+    let events = window.eventsData;
+    console.log('[EVENTS] Всего событий:', events.length);
+    console.log('[EVENTS] Страны:', countryVals, 'Месяцы:', monthVals, 'Год:', yearVal);
+    let filtered = events;
+    if (countryVals.length) {
+        filtered = filtered.filter(e => countryVals.includes(e.country));
+        console.log('[EVENTS] После фильтрации по странам:', filtered.length);
+    }
+    if (monthVals.length) {
+        filtered = filtered.filter(e => {
+            const d = new Date(e.date || e.day);
+            return monthVals.includes(d.getMonth() + 1);
+        });
+        console.log('[EVENTS] После фильтрации по месяцам:', filtered.length);
+    }
+    if (yearVal) {
+        filtered = filtered.filter(e => {
+            const d = new Date(e.date || e.day);
+            return d.getFullYear() === yearVal;
+        });
+        console.log('[EVENTS] После фильтрации по году:', filtered.length);
+    }
+    filtered.sort((a,b)=>{
+        const da = new Date(a.date || a.day);
+        const db = new Date(b.date || b.day);
+        return da-db;
     });
-    filtered.sort((a,b)=>new Date(a.date)-new Date(b.date));
+    if (filtered.length === 0) {
+        console.log('[EVENTS] Нет событий после фильтрации!');
+    }
     let html = `<table class="event-list-table"><thead><tr><th>${translations[currentLang]?.date||'Date'}</th><th>${translations[currentLang]?.eventType||'Type'}</th><th>${translations[currentLang]?.track||'Track'}</th><th>${translations[currentLang]?.country||'Country'}</th><th>${translations[currentLang]?.officialWebsite||'Site'}</th></tr></thead><tbody>`;
     for (const e of filtered) {
-        const d = new Date(e.date);
+        const d = new Date(e.date || e.day);
         html += `<tr><td>${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}</td><td>${e.event.split(' - ')[0]}</td><td>${e.track}</td><td>${e.flag} ${e.countryName}</td><td><a href="${e.website}" target="_blank">${translations[currentLang]?.officialWebsite||'Site'}</a></td></tr>`;
     }
     html += '</tbody></table>';
