@@ -12,3 +12,10 @@ Racing tracks and events in Europe
 - Multi-language interface (EN, RU, FR, ES, DE, IT)
 - Track and club info with links
 
+# Get events
+
+```
+source ~/venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 events.py
+```

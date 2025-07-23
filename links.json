@@ -1,12 +1,25 @@
 [
   {
+    "club": "Amazing Drives",
+    "website": "https://amazingdrives.es/calendario-de-eventos/",
+    "tracks": [
+      "jerez-angel-nieto",
+      "valencia-ricardo-tormo",
+      "calafat",
+      "castelloli"
+    ],
+    "country": "Spain"
+  },
+  {
     "club": "Grip Spain",
     "website": "https://www.gripspain.com/",
     "tracks": [
       "barcelona-catalunya",
       "jerez-angel-nieto",
       "valencia-ricardo-tormo",
-      "navarra"
+      "navarra",
+      "calafat",
+      "castelloli"
     ],
     "country": "Spain"
   },
@@ -16,16 +29,9 @@
     "tracks": [
       "barcelona-catalunya",
       "jerez-angel-nieto",
-      "valencia-ricardo-tormo"
-    ],
-    "country": "Spain"
-  },
-  {
-    "club": "Amazing Drives",
-    "website": "https://amazingdrives.es/calendario-de-eventos/",
-    "tracks": [
-      "jerez-angel-nieto",
-      "valencia-ricardo-tormo"
+      "valencia-ricardo-tormo",
+      "calafat",
+      "castelloli"
     ],
     "country": "Spain"
   },
@@ -33,7 +39,9 @@
     "club": "Sprint Track League",
     "website": "https://sprinttrackleague.com/calendario/",
     "tracks": [
-      "jerez-angel-nieto"
+      "jerez-angel-nieto",
+      "calafat",
+      "castelloli"
     ],
     "country": "Spain"
   },
@@ -41,7 +49,9 @@
     "club": "Trackrat Club",
     "website": "https://www.trackratclub.com/calendario-track-days/",
     "tracks": [
-      "barcelona-catalunya"
+      "barcelona-catalunya",
+      "calafat",
+      "castelloli"
     ],
     "country": "Spain"
   },
@@ -66,12 +76,6 @@
   {
     "club": "Factoria RR",
     "website": "https://www.factoriarr.com/",
-    "tracks": [],
-    "country": "Spain"
-  },
-  {
-    "club": "Club Evolution",
-    "website": "https://www.clubevolution.es/",
     "tracks": [],
     "country": "Spain"
   }
