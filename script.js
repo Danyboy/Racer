@@ -595,7 +595,6 @@ function renderCalendar() {
                 eventElement.className = 'event-item';
                 eventElement.innerHTML = `
                     <span class="event-flag">${event.flag}</span>
-                    <span class="event-track-img">${event.trackImage}</span>
                     <span>${event.event.split(' - ')[1] || event.event}</span>
                 `;
                 eventElement.addEventListener('click', () => showEventDetails(event));
@@ -634,7 +633,7 @@ function showEventDetails(event) {
                 </div>
                 <div class="event-info-item">
                     <strong>${translations[currentLang]?.country || translations.en.country}:</strong>
-                    ${event.flag} ${event.countryName}
+                    ${event.flag} ${event.country}
                 </div>
                 <div class="event-info-item">
                     <strong>${translations[currentLang]?.date || translations.en.date}:</strong>
@@ -645,12 +644,8 @@ function showEventDetails(event) {
                     ${event.event.split(' - ')[0]}
                 </div>
             </div>
-            <div class="event-description">
-                <strong>${translations[currentLang]?.description || translations.en.description}:</strong><br>
-                ${event.description}
-            </div>
             <div class="event-links">
-                <a href="${event.website}" target="_blank">
+                <a href="${event.organizer_url}" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                     ${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}
                 </a>
