@@ -21,21 +21,21 @@
     "organizer": "Amazing Drives"
   },
   {
-    "track_id": null,
+    "track_id": "Unknown",
     "day": "2025-10-23",
     "price": 2150.0,
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
   {
-    "track_id": null,
+    "track_id": "Unknown",
     "day": "2025-11-22",
     "price": 349.0,
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
   {
-    "track_id": null,
+    "track_id": "Unknown",
     "day": "2026-04-11",
     "price": 2850.0,
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
@@ -44,21 +44,21 @@
   {
     "track_id": "cartagena",
     "day": "2024-05-25",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.gripspain.com/",
     "organizer": "Grip Spain"
   },
   {
     "track_id": "castelloli",
     "day": "2024-09-15",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.gripspain.com/",
     "organizer": "Grip Spain"
   },
   {
     "track_id": "calafat",
     "day": "2024-12-07",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.gripspain.com/",
     "organizer": "Grip Spain"
   },
@@ -93,28 +93,28 @@
   {
     "track_id": "motorland-aragon",
     "day": "2025-07-20",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.factoriarr.com/",
     "organizer": "Factoria RR"
   },
   {
     "track_id": "calafat",
     "day": "2025-09-07",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.factoriarr.com/",
     "organizer": "Factoria RR"
   },
   {
     "track_id": "castelloli",
     "day": "2025-09-27",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.factoriarr.com/",
     "organizer": "Factoria RR"
   },
   {
     "track_id": "castelloli",
     "day": "2025-10-26",
-    "price": null,
+    "price": "Unknown",
     "organizer_url": "https://www.factoriarr.com/",
     "organizer": "Factoria RR"
   }
