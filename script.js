@@ -214,7 +214,7 @@ function getSelectedYear() {
 function fillYearFilter() {
     const yearFilter = document.getElementById('yearFilter');
     if (!yearFilter) return;
-    const years = Array.from(new Set(eventsData.map(e => new Date(e.date).getFullYear()))).sort((a,b)=>a-b);
+    const years = Array.from(new Set(window.eventsData.map(e => new Date(e.date).getFullYear()))).sort((a,b)=>a-b);
     yearFilter.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
     yearFilter.value = currentYear;
 }
@@ -227,7 +227,7 @@ function renderEventList() {
     const monthVals = getMultiSelectValues(monthFilter).map(Number);
     const yearVal = getSelectedYear();
     const currentLang = document.querySelector('.flag-btn.active').getAttribute('data-lang');
-    let filtered = eventsData.filter(e => {
+    let filtered = window.eventsData.filter(e => {
         const d = new Date(e.date);
         const matchCountry = !countryVals.length || countryVals.includes(e.country);
         const matchMonth = !monthVals.length || monthVals.includes(d.getMonth()+1);
@@ -315,9 +315,17 @@ async function loadTracks() {
   }
 }
 
+async function loadEvents() {
+  if (!window.eventsData) {
+    const resp = await fetch('events.json');
+    window.eventsData = await resp.json();
+  }
+}
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', async function() {
     await loadTracks();
+    await loadEvents();
     fillYearFilter();
     countryMulti = createCustomMultiselect(
         'countryMultiSelect',
@@ -517,7 +525,7 @@ function renderCalendar() {
     const selectedMonth = monthFilter.value;
     
     // Фильтрация событий
-    let filteredEvents = eventsData;
+    let filteredEvents = window.eventsData;
     if (selectedCountry) {
         filteredEvents = filteredEvents.filter(event => event.country === selectedCountry);
     }
@@ -645,7 +653,7 @@ function searchEvent(eventName) {
 
 // Экспорт данных в JSON (для демонстрации)
 function exportEventsToJSON() {
-    const jsonData = JSON.stringify(eventsData, null, 2);
+    const jsonData = JSON.stringify(window.eventsData, null, 2);
     const blob = new Blob([jsonData], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
