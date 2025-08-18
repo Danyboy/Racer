@@ -634,6 +634,14 @@ footer {
     font-weight: 500;
     transition: color 0.2s;
 }
+
+.footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
 .event-list-table a:hover {
     color: #FFD700;
 }
