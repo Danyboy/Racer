@@ -13,15 +13,16 @@ Racing tracks and events in Europe
 - Track and club info with links
 
 # Plans:
-
+```
 Calendar filter by race track
  Try to show more data in calendar view on mobile
 Show only upcoming events in list view
 Show events on map view
  Add notification if events planned on this track in this month
-Add race events type - car, moto, carting
 
+Add race events type - car, moto, carting
 Add more race tracks, club and events sites
+```
 
 
 # Get events
