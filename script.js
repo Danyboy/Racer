@@ -227,6 +227,14 @@ function renderEventList() {
     console.log('[EVENTS] Всего событий:', events.length);
     console.log('[EVENTS] Страны:', countryVals, 'Месяцы:', monthVals, 'Год:', yearVal);
     let filtered = events;
+    // Фильтрация только будущих событий для listView
+    const today = new Date();
+    today.setHours(0,0,0,0); // Сброс времени для сравнения только по дате
+    filtered = filtered.filter(e => {
+        const d = new Date(e.date || e.day);
+        d.setHours(0,0,0,0);
+        return d >= today;
+    });
     if (countryVals.length) {
         filtered = filtered.filter(e => countryVals.includes(e.country));
         console.log('[EVENTS] После фильтрации по странам:', filtered.length);

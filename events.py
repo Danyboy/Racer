@@ -99,7 +99,7 @@ def main():
         prompt = (
             f"Extract all upcoming racing events from this HTML block:\n"
             f"Return JSON array with fields: track_id (from this list: {[t['id'] for t in tracks['tracks']]}, "
-            f"track, event, country (where track placed), flag (country flag), day (YYYY-MM-DD), price (if any), organizer_url (use {club['website']}). "
+            f"track, event, event_type (car, moto, carting), country (where track placed), flag (country flag), day (YYYY-MM-DD), price (if any), organizer_url (use {club['website']}). "
             f"Very important: use only track_id from the provided list, do not invent new ids."
             f"\nDates may be in DD/MM/YYYY format. Parse them as YYYY-MM-DD.\n\n"
             f"{event_text}"
