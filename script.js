@@ -599,7 +599,9 @@ function renderCalendar() {
             
             dayElement.appendChild(eventsContainer);
         }
-        
+        // TODO: hide event flag on mobile
+        // <span class="event-flag">${event.flag}</span>
+
         calendarDays.appendChild(dayElement);
     }
 }
