@@ -81,7 +81,7 @@ const translations = {
         track: "Track",
         country: "Country",
         date: "Date",
-        eventType: "Event type",
+        eventType: "Event name",
         description: "Description",
         officialWebsite: "Official track website",
         searchInfo: "Search information",
