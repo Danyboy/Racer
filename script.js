@@ -647,10 +647,6 @@ function showEventDetails(event) {
                     <i class="fas fa-external-link-alt"></i>
                     ${translations[currentLang]?.officialWebsite || translations.en.officialWebsite}
                 </a>
-                <a href="#" onclick="searchEvent('${event.event}')">
-                    <i class="fas fa-search"></i>
-                    ${translations[currentLang]?.searchInfo || translations.en.searchInfo}
-                </a>
             </div>
         </div>
     `;
