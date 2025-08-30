@@ -352,17 +352,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     await loadTracks();
     await loadEvents();
     fillYearFilter();
-    countryMulti = createCustomMultiselect(
-        'countryMultiSelect',
-        countryOptions,
-        translations[getStoredLanguage()].allCountries,
-        () => {
-            renderCalendar();
-            renderEventList();
-            updateMapMarkers();
-            updateURLFromState();
-        }
-    );
+    // countryMulti = createCustomMultiselect(
+    //     'countryMultiSelect',
+    //     countryOptions,
+    //     translations[getStoredLanguage()].allCountries,
+    //     () => {
+    //         renderCalendar();
+    //         renderEventList();
+    //         updateMapMarkers();
+    //         updateURLFromState();
+    //     }
+    // );
     monthMulti = createCustomMultiselect(
         'monthMultiSelect',
         monthOptions,
