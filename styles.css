@@ -642,6 +642,13 @@ footer {
     transition: color 0.2s;
 }
 
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
 .event-list-table a:hover {
     color: #FFD700;
 }
