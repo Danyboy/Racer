@@ -46,31 +46,30 @@ def call_deepseek(prompt):
     response = requests.post(DEEPSEEK_API_URL, headers=headers, json=data, timeout=160)
     response.raise_for_status()
     content = response.json()["choices"][0]["message"]["content"]
-    # content = response.json()
     print("=== DeepSeek raw content ===")
-    print(content)  # логируем первые 1000 символов
+    print(content)  # log first 1000 characters
     import re, json
     match = re.search(r'```json\s*(.*?)```', content, re.DOTALL)
     if match:
         content = match.group(1)
     content = content.strip()
     if not content:
-        print("DeepSeek вернул пустой ответ!")
+        print("DeepSeek returned empty response!")
         return []
     try:
         return json.loads(content)
     except Exception as e:
-        print("Ошибка при разборе JSON от DeepSeek:", e)
+        print("Error parsing JSON from DeepSeek:", e)
         print("Content was:", content)
         return []
 
 def extract_text_from_html(html):
     soup = BeautifulSoup(html, 'html.parser')
-    # Удаляем все script и style
+    # Remove all script and style
     for tag in soup(['script', 'style']):
         tag.decompose()
     text = soup.get_text(separator=' ', strip=True)
-    # Удаляем лишние пробелы
+    # Remove extra spaces
     import re
     text = re.sub(r'\s+', ' ', text)
     return text
@@ -86,21 +85,17 @@ def main():
             resp = requests.get(club['website'], timeout=20)
             html = resp.text
         except Exception as e:
-            print(f'Ошибка при скачивании {club["website"]}: {e}')
+            print(f'Error downloading {club["website"]}: {e}')
             continue
 
-        # Обрезаем HTML до нужного блока
-        # import re
-        # match = re.search(r'(<div[^>]+id="fooevents-event-listing-tiles"[^>]*>.*?</div>)(?s)', html)
-        # if match:
-        #     event_html = match.group(1)
-        # else:
-        event_html = html  # fallback
+        event_html = html
 
-        # Очищаем HTML, оставляя только текст
-        event_text = extract_text_from_html(event_html)
+        # Clean HTML, leaving only text
+        if club['club'] == 'Tandas Privadas' or club['club'] == 'Sprint track league':
+            event_text = event_html
+        else:
+            event_text = extract_text_from_html(event_html)
 
-        # Формируем промпт для DeepSeek
         prompt = (
             f"Extract all upcoming racing events from this HTML block:\n"
             f"Return JSON array with fields: track_id (from this list: {[t['id'] for t in tracks['tracks']]}, "
@@ -111,10 +106,8 @@ def main():
         )
         print('=== PROMPT ===')
         print(prompt[:2000])
-        # print('=== HTML ===')
-        # print(html[:1000])
 
-        # Получаем структурированные данные от DeepSeek
+        # Get structured data from DeepSeek
         try:
             events = call_deepseek(prompt)
             # events = [{"track_id": "...", "day": "...", "price": "...", "organizer_url": "..."}]
@@ -122,16 +115,16 @@ def main():
                 ev['organizer'] = club['club']
                 all_events.append(ev)
         except Exception as e:
-            print(f'Ошибка DeepSeek для {club["club"]}: {e}')
+            print(f'DeepSeek error for {club["club"]}: {e}')
 
-    # Бэкапим старый events.json
+    # Backup old events.json
     backup_events()
 
-    # Сохраняем новый events.json
+    # Save new events.json
     with open(EVENTS_PATH, 'w', encoding='utf-8') as f:
         json.dump(all_events, f, ensure_ascii=False, indent=2)
 
-    print(f'Сохранено {len(all_events)} событий в {EVENTS_PATH}')
+    print(f'Saved {len(all_events)} events to {EVENTS_PATH}')
 
 if __name__ == '__main__':
     main()

@@ -334,8 +334,8 @@ async function loadTracks() {
 
 async function loadEvents() {
   if (!window.eventsData) {
-    const resp = await fetch('events.json');
-    window.eventsData = await resp.json();
+    const resp = await fetch('events.json?v=' + new Date().getDate());
+        window.eventsData = await resp.json();
   }
 }
 

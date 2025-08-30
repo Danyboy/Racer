@@ -6,7 +6,7 @@
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-09-27",
-    "price": 429.0,
+    "price": "479.00",
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
@@ -17,7 +17,7 @@
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-10-17",
-    "price": 590.0,
+    "price": "590.00",
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
@@ -28,25 +28,36 @@
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-10-17",
-    "price": 350.0,
+    "price": "350.00",
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
   {
-    "track_id": "circuit-andalucia",
+    "track_id": "albacete",
+    "track": "Circuit d'Alcarràs",
+    "event": "ADCC Round 4: Alcarras II",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-22",
+    "price": "349.00",
+    "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
+    "organizer": "Amazing Drives"
+  },
+  {
+    "track_id": "jerez-angel-nieto",
     "track": "Circuit Andalucia Circuit",
     "event": "PreInscripción V 24h Resistencia ADCC Andalucía",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2026-04-11",
-    "price": 2850.0,
+    "price": "2850.00",
     "organizer_url": "https://amazingdrives.es/calendario-de-eventos/",
     "organizer": "Amazing Drives"
   },
   {
     "track_id": "cartagena",
-    "track": "CARTAGENA",
-    "event": "Tandas libres",
+    "track": "Cartagena",
+    "event": "Primera prueba",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2024-05-25",
@@ -56,8 +67,8 @@
   },
   {
     "track_id": "castelloli",
-    "track": "CASTELLOLÍ",
-    "event": "Tandas libres",
+    "track": "Castellolí",
+    "event": "Segunda prueba",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2024-09-15",
@@ -67,8 +78,8 @@
   },
   {
     "track_id": "calafat",
-    "track": "CALAFAT",
-    "event": "Tandas libres",
+    "track": "Calafat",
+    "event": "Tercera prueba",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2024-12-07",
@@ -77,56 +88,210 @@
     "organizer": "Grip Spain"
   },
   {
-    "track_id": "motorland-aragon",
-    "track": "Motorland Aragón",
-    "event": "APERTURA - TANDAS LIBRES MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Tandas Privadas",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2025-08-07",
+    "day": "2025-09-07",
     "price": null,
-    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
-    "organizer": "Motorland Aragon"
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
   },
   {
-    "track_id": "motorland-aragon",
-    "track": "Motorland Aragón",
-    "event": "APERTURA - TANDAS LIBRES MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Tandas Privadas",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2025-08-14",
+    "day": "2025-09-14",
     "price": null,
-    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
-    "organizer": "Motorland Aragon"
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
   },
   {
-    "track_id": "motorland-aragon",
-    "track": "Motorland Aragón",
-    "event": "APERTURA - TANDAS LIBRES MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
+    "track_id": "kotarrrratok",
+    "track": "Kotarrrratok",
+    "event": "Tandas Privadas",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2025-08-21",
+    "day": "2025-10-04",
     "price": null,
-    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
-    "organizer": "Motorland Aragon"
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
   },
   {
-    "track_id": "motorland-aragon",
-    "track": "Motorland Aragón",
-    "event": "ENTRENOS PRIVADOS",
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Luxe Track Days",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-10-12",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-10-12",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "aspar-circuit",
+    "track": "Aspar Circuit",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-10-18",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-01",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Castelloli",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-08",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Luxe Track Days",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-09",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-09",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "calafat",
+    "track": "Calafat",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-11-29",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "110dB Master Drivers",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-12-06",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "jarama",
+    "track": "Jarama",
+    "event": "Luxe Track Days",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-12-07",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "kotarrrratok",
+    "track": "Kotarrrratok",
+    "event": "Tandas Privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-12-13",
+    "price": null,
+    "organizer_url": "https://www.tandasprivadas.com/eventos/",
+    "organizer": "Tandas Privadas"
+  },
+  {
+    "track_id": "calafat",
+    "track": "Circuit Calafat",
+    "event": "PISTA CEDIDA",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-08-18",
+    "price": null,
+    "organizer_url": "https://circuitcalafat.com/calendario-eventos/",
+    "organizer": "Circuit calafat"
+  },
+  {
+    "track_id": "calafat",
+    "track": "Circuit Calafat",
+    "event": "PISTA CEDIDA",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-08-22",
+    "price": null,
+    "organizer_url": "https://circuitcalafat.com/calendario-eventos/",
+    "organizer": "Circuit calafat"
+  },
+  {
+    "track_id": "calafat",
+    "track": "Circuit Calafat",
+    "event": "PISTA CEDIDA",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-08-25",
     "price": null,
-    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
-    "organizer": "Motorland Aragon"
+    "organizer_url": "https://circuitcalafat.com/calendario-eventos/",
+    "organizer": "Circuit calafat"
+  },
+  {
+    "track_id": "calafat",
+    "track": "Circuit Calafat",
+    "event": "CAMPIONAT DE CATALUNYA DE VELOCITAT",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-08-30",
+    "price": "25.00€ – 100.00€",
+    "organizer_url": "https://circuitcalafat.com/calendario-eventos/",
+    "organizer": "Circuit calafat"
   },
   {
     "track_id": "motorland-aragon",
     "track": "Motorland Aragón",
-    "event": "ENTRENOS PRIVADOS",
+    "event": "TANDAS MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2025-08-27",
+    "day": "2025-09-02",
     "price": null,
     "organizer_url": "https://www.motorlandaragon.com/es/eventos",
     "organizer": "Motorland Aragon"
@@ -134,10 +299,21 @@
   {
     "track_id": "motorland-aragon",
     "track": "Motorland Aragón",
-    "event": "APERTURA - TANDAS MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
+    "event": "Evento privado",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2025-08-28",
+    "day": "2025-09-04",
+    "price": null,
+    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
+    "organizer": "Motorland Aragon"
+  },
+  {
+    "track_id": "motorland-aragon",
+    "track": "Motorland Aragón",
+    "event": "TANDAS MOTOS, COCHES Y KARTS EN EL CIRCUITO DE KARTING INTERNACIONAL",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-09-05",
     "price": null,
     "organizer_url": "https://www.motorlandaragon.com/es/eventos",
     "organizer": "Motorland Aragon"
@@ -166,83 +342,50 @@
   },
   {
     "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Campeonatos motos Castilla y León",
+    "track": "Motorland Aragón",
+    "event": "MOTOREXTREMO / Rodada",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2024-08-02",
+    "day": "2025-09-14",
+    "price": null,
+    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
+    "organizer": "Motorland Aragon"
+  },
+  {
+    "track_id": "motorland-aragon",
+    "track": "Motorland Aragón",
+    "event": "Copa de España de Minivelocidad",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-09-20",
+    "price": null,
+    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
+    "organizer": "Motorland Aragon"
+  },
+  {
+    "track_id": "motorland-aragon",
+    "track": "Motorland Aragón",
+    "event": "TMSR - RODADA MOTOS CIRCUITO DE VELOCIDAD",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-09-20",
+    "price": null,
+    "organizer_url": "https://www.motorlandaragon.com/es/eventos",
+    "organizer": "Motorland Aragon"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Campeonato de karting Castilla y León",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-08-19",
     "price": null,
     "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Campeonatos motos Castilla y León",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-03",
-    "price": null,
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Tandas de karts de competición y coches (sólo grip)",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-09",
-    "price": null,
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Tandas libres de motos Kotarr Racing Team",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-10",
-    "price": null,
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Mieres Racing Competición",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-15",
-    "price": "100 € (Tandas), 150 € (Curso)",
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Mieres Racing Competición",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-16",
-    "price": "100 € (Tandas), 150 € (Curso)",
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
-    "track": "Circuito Kotarr",
-    "event": "Entrenos libre de motos y karts de competición y de alquiler",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2024-08-17",
-    "price": null,
-    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
-    "organizer": "Circuito Kotarr"
-  },
-  {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
     "event": "Campeonato de karting Castilla y León",
     "country": "Spain",
@@ -253,18 +396,18 @@
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
-    "event": "Campeonato de karting Castilla y León",
+    "event": "Campeonato madrileño de karting",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": "2024-08-24",
+    "day": "2024-08-25",
     "price": null,
     "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
     "event": "Campeonato madrileño de karting",
     "country": "Spain",
@@ -275,7 +418,7 @@
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
     "event": "Campeonato madrileño de karting",
     "country": "Spain",
@@ -286,7 +429,18 @@
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Campeonato madrileño de karting",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-02",
+    "price": null,
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
     "event": "Campeonato madrileño de karting",
     "country": "Spain",
@@ -297,7 +451,7 @@
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
     "event": "Campeonato madrileño de karting",
     "country": "Spain",
@@ -308,13 +462,79 @@
     "organizer": "Circuito Kotarr"
   },
   {
-    "track_id": "motorland-aragon",
+    "track_id": "castelloli",
     "track": "Circuito Kotarr",
-    "event": "Campeonato de motos de Castilla y León",
+    "event": "Cameponato de motos de Castilla y León",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2024-09-13",
-    "price": "60€ (boxes), 20€ (enganche luz)",
+    "price": "60€ per day for box rental",
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Cameponato de motos de Castilla y León",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-14",
+    "price": "60€ per day for box rental",
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Sport MCYL",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-20",
+    "price": null,
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Tandas libres de motos Kotarr Racing Team",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-21",
+    "price": null,
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Mieres Racing Competición",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-27",
+    "price": "100€ for tandas, 150€ for course",
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Tandas de coche de Drift o Grip",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-09-28",
+    "price": null,
+    "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
+    "organizer": "Circuito Kotarr"
+  },
+  {
+    "track_id": "castelloli",
+    "track": "Circuito Kotarr",
+    "event": "Tandas privadas",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2024-10-04",
+    "price": null,
     "organizer_url": "https://www.circuitokotarr.com/eventos_1.html",
     "organizer": "Circuito Kotarr"
   },
@@ -324,7 +544,7 @@
     "event": "Automovilismo-Racing & Weekend",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": null,
+    "day": "2025-01-01",
     "price": null,
     "organizer_url": "https://circuitodejerez.com/calendario/",
     "organizer": "circuito de jerez"
@@ -332,10 +552,10 @@
   {
     "track_id": "jerez-angel-nieto",
     "track": "Circuito de Jerez Ángel Nieto",
-    "event": "Concentración de Clásicos del automovilismo 40 Aniversario Circuito de Jerez-Ángel Nieto",
+    "event": "Concentración de Clásicos del automovilismo 40 Aniversario",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": null,
+    "day": "2025-01-01",
     "price": null,
     "organizer_url": "https://circuitodejerez.com/calendario/",
     "organizer": "circuito de jerez"
@@ -346,14 +566,36 @@
     "event": "Gran Encuentro Motero-40 Aniversario",
     "country": "Spain",
     "flag": "🇪🇸",
-    "day": null,
+    "day": "2025-01-01",
     "price": null,
     "organizer_url": "https://circuitodejerez.com/calendario/",
     "organizer": "circuito de jerez"
   },
   {
+    "track_id": "jerez-angel-nieto",
+    "track": "Andalucía Circuit",
+    "event": "Trackday League",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-10-25",
+    "price": "180 €",
+    "organizer_url": "https://sprinttrackleague.com/calendario/",
+    "organizer": "Sprint Track League"
+  },
+  {
+    "track_id": "motorland-aragon",
+    "track": "Motorland",
+    "event": "Trackday League",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-12-07",
+    "price": null,
+    "organizer_url": "https://sprinttrackleague.com/calendario/",
+    "organizer": "Sprint Track League"
+  },
+  {
     "track_id": "barcelona-catalunya",
-    "track": "CIRCUIT DE BARCELONA-CATALUNYA",
+    "track": "Circuit de Barcelona-Catalunya",
     "event": "AFTERWORKS 2025",
     "country": "Spain",
     "flag": "🇪🇸",
@@ -363,8 +605,19 @@
     "organizer": "Trackrat Club"
   },
   {
+    "track_id": "barcelona-catalunya",
+    "track": "Circuit de Barcelona-Catalunya",
+    "event": "The Global Paddock",
+    "country": "Spain",
+    "flag": "🇪🇸",
+    "day": "2025-09-12",
+    "price": "Acceso como público gratuito, Cena desde 65€",
+    "organizer_url": "https://www.trackratclub.com/calendario-track-days/",
+    "organizer": "Trackrat Club"
+  },
+  {
     "track_id": "castelloli",
-    "track": "PARCMOTOR CASTELLOLÍ",
+    "track": "Parcmotor Castellolí",
     "event": "BACK TO THE TRACK",
     "country": "Spain",
     "flag": "🇪🇸",
@@ -380,7 +633,7 @@
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-09-07",
-    "price": "160.00 - 290.00 €",
+    "price": "160.00 € - 290.00 €",
     "organizer_url": "https://trackdaysevents.com/inscripciones/",
     "organizer": "Track Days Events"
   },
@@ -402,25 +655,14 @@
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-11-02",
-    "price": "160.00 - 290.00 €",
+    "price": "160.00 € - 290.00 €",
     "organizer_url": "https://trackdaysevents.com/inscripciones/",
     "organizer": "Track Days Events"
   },
   {
-    "track_id": "jarama",
-    "track": "Circuito de Madrid Jarama – RACE",
-    "event": "VolRace & Clubs",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2025-02-01",
-    "price": null,
-    "organizer_url": "https://volrace.com/calendario-eventos-volrace/",
-    "organizer": "Volrace"
-  },
-  {
     "track_id": "castelloli",
     "track": "Parcmotor Castellolí",
-    "event": "Motociclismo",
+    "event": "Racing Event",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-08-30",
@@ -431,7 +673,7 @@
   {
     "track_id": "calafat",
     "track": "Circuit de Calafat",
-    "event": "Motociclismo",
+    "event": "Racing Event",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-09-07",
@@ -440,20 +682,9 @@
     "organizer": "Factoria RR"
   },
   {
-    "track_id": null,
-    "track": "Circuit d'Alcarràs",
-    "event": "Motociclismo",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2025-09-13",
-    "price": null,
-    "organizer_url": "https://www.factoriarr.com/",
-    "organizer": "Factoria RR"
-  },
-  {
     "track_id": "castelloli",
     "track": "Parcmotor Castellolí",
-    "event": "Motociclismo",
+    "event": "Racing Event",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-09-27",
@@ -462,47 +693,14 @@
     "organizer": "Factoria RR"
   },
   {
-    "track_id": null,
-    "track": "Circuit d'Alcarràs",
-    "event": "Motociclismo",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2025-10-05",
-    "price": null,
-    "organizer_url": "https://www.factoriarr.com/",
-    "organizer": "Factoria RR"
-  },
-  {
     "track_id": "castelloli",
     "track": "Parcmotor Castellolí",
-    "event": "Motociclismo",
+    "event": "Racing Event",
     "country": "Spain",
     "flag": "🇪🇸",
     "day": "2025-10-26",
     "price": null,
     "organizer_url": "https://www.factoriarr.com/",
     "organizer": "Factoria RR"
-  },
-  {
-    "track_id": "andalucia-circuit",
-    "track": "Andalucía Circuit",
-    "event": "SPRINT TRACK OPEN PIT",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2025-10-25",
-    "price": null,
-    "organizer_url": "https://sprinttrackleague.com/open-pit/",
-    "organizer": "Sprint track league"
-  },
-  {
-    "track_id": "andalucia-circuit",
-    "track": "Andalucía Circuit",
-    "event": "SPRINT TRACK OPEN PIT",
-    "country": "Spain",
-    "flag": "🇪🇸",
-    "day": "2025-11-16",
-    "price": null,
-    "organizer_url": "https://sprinttrackleague.com/open-pit/",
-    "organizer": "Sprint track league"
   }
 ]
