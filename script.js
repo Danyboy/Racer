@@ -363,32 +363,32 @@ document.addEventListener('DOMContentLoaded', async function() {
     //         updateURLFromState();
     //     }
     // );
-    monthMulti = createCustomMultiselect(
-        'monthMultiSelect',
-        monthOptions,
-        translations[getStoredLanguage()].allMonths,
-        () => {
-            renderCalendar();
-            renderEventList();
-            updateMapMarkers();
-            updateURLFromState();
-        }
-    );
-    yearMulti = createCustomMultiselect(
-        'yearMultiSelect',
-        yearOptions,
-        '2025',
-        (selected) => {
-            if (selected.length) {
-                currentYear = parseInt(selected[0]);
-                renderCalendar();
-                renderEventList();
-                updateMapMarkers();
-                updateURLFromState();
-            }
-        },
-        true // одиночный выбор
-    );
+    // monthMulti = createCustomMultiselect(
+    //     'monthMultiSelect',
+    //     monthOptions,
+    //     translations[getStoredLanguage()].allMonths,
+    //     () => {
+    //         renderCalendar();
+    //         renderEventList();
+    //         updateMapMarkers();
+    //         updateURLFromState();
+    //     }
+    // );
+    // yearMulti = createCustomMultiselect(
+    //     'yearMultiSelect',
+    //     yearOptions,
+    //     '2025',
+    //     (selected) => {
+    //         if (selected.length) {
+    //             currentYear = parseInt(selected[0]);
+    //             renderCalendar();
+    //             renderEventList();
+    //             updateMapMarkers();
+    //             updateURLFromState();
+    //         }
+    //     },
+    //     true // одиночный выбор
+    // );
     applyStateFromURL();
     setupLanguageFlags(getStoredLanguage());
     translateInterface(getStoredLanguage());
