@@ -591,7 +591,6 @@ function renderCalendar() {
                 const eventElement = document.createElement('div');
                 eventElement.className = 'event-item';
                 eventElement.innerHTML = `
-                    <span class="event-flag">${event.flag}</span>
                     <span>${event.event.split(' - ')[1] || event.event}</span>
                 `;
                 eventElement.addEventListener('click', () => showEventDetails(event));
